@@ -19,7 +19,7 @@
 
 ---
 
-## 1. Limitaciones en la ejecución de aplicaciones móviles
+## 1. Limitaciones en la ejecución de aplicaciones móviles `[Volver](#Sumario)`
 
 Los dispositivos móviles actuales ofrecen una gran capacidad de proceso, pero trabajan bajo restricciones distintas de las de un equipo de escritorio. Las limitaciones más relevantes no deben entenderse solo como falta de potencia, sino como un equilibrio entre **rendimiento, memoria, temperatura, autonomía, conectividad y ciclo de vida de la aplicación**.
 
@@ -98,7 +98,7 @@ Optimizar una aplicación móvil no significa únicamente hacerla rápida. Signi
 
 ---
 
-## 2. Tecnologías de desarrollo
+## 2. Tecnologías de desarrollo `[Volver](#Sumario)`
 
 Podemos distinguir tres grandes enfoques: **nativo**, **multiplataforma** e **híbrido basado en tecnologías web**. Ninguno es universalmente mejor; la elección depende del equipo, el producto y las plataformas objetivo.
 

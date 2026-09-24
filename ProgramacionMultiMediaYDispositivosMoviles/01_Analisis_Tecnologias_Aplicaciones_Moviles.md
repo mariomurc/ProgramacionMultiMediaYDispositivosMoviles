@@ -19,7 +19,8 @@
 
 ---
 
-## 1. Limitaciones en la ejecución de aplicaciones móviles [Volver al índice](#Sumario)
+## 1. Limitaciones en la ejecución de aplicaciones móviles 
+[Volver al índice](#Sumario)
 
 Los dispositivos móviles actuales ofrecen una gran capacidad de proceso, pero trabajan bajo restricciones distintas de las de un equipo de escritorio. Las limitaciones más relevantes no deben entenderse solo como falta de potencia, sino como un equilibrio entre **rendimiento, memoria, temperatura, autonomía, conectividad y ciclo de vida de la aplicación**.
 
@@ -98,7 +99,8 @@ Optimizar una aplicación móvil no significa únicamente hacerla rápida. Signi
 
 ---
 
-## 2. Tecnologías de desarrollo `[Volver](#Sumario)`
+## 2. Tecnologías de desarrollo
+[Volver al índice](#Sumario)
 
 Podemos distinguir tres grandes enfoques: **nativo**, **multiplataforma** e **híbrido basado en tecnologías web**. Ninguno es universalmente mejor; la elección depende del equipo, el producto y las plataformas objetivo.
 
@@ -224,6 +226,7 @@ La idea importante para el alumnado no es memorizar APIs, sino comprender que **
 ---
 
 ## 3. Clasificación y características de los dispositivos móviles
+[Volver al índice](#Sumario)
 
 > Este apartado sustituye al antiguo título "Instalación y configuración de entornos de trabajo", ya que su contenido realmente clasifica dispositivos y analiza sus capacidades.
 
@@ -271,6 +274,7 @@ Para desarrollo interesa medir **consumo energético** y detectar operaciones qu
 ---
 
 ## 4. Perfiles dispositivo-aplicación
+[Volver al índice](#Sumario)
 
 Los perfiles ayudan a razonar sobre compatibilidad, pero no deben convertirse en una lista rígida de modelos o cifras.
 
@@ -302,6 +306,7 @@ Una aplicación debe definir **requisitos mínimos y capacidades necesarias**, y
 ---
 
 ## 5. Estructura y arquitectura de aplicaciones móviles
+[Volver al índice](#Sumario)
 
 ![Capas y componentes de una aplicación móvil](img/arquitectura-movil.png)
 
@@ -425,24 +430,15 @@ Una arquitectura separada permite probar:
 ---
 
 ## 6. Android Studio: instalación y configuración
+[Volver al índice](#Sumario)
 
-La instalación detallada puede mantenerse en el **Anexo I**, pero conviene que el anexo cubra actualmente:
+La instalación detallada se encuentra [AQUÍ](https://developer.android.com/studio/install?hl=es-419)
 
-1. descarga e instalación de una versión estable de Android Studio;
-2. SDK Manager y plataformas necesarias;
-3. creación de un emulador desde Device Manager;
-4. configuración de un dispositivo físico y depuración USB;
-5. creación de un proyecto **Empty Activity con Jetpack Compose**;
-6. estructura Gradle del proyecto y gestión de dependencias;
-7. ejecución, Logcat y herramientas básicas de depuración;
-8. perfiles de CPU, memoria y energía;
-9. uso básico de Git desde el IDE.
-
-> Evita fijar en los apuntes una versión concreta de Android Studio salvo que el anexo se regenere cada curso. Es preferible indicar "última versión estable compatible con el SDK utilizado en clase".
 
 ---
 
-## 7. Criterios para elegir tecnología
+## 7. Criterios para elegir tecnología 
+[Volver al índice](#Sumario)
 
 | Necesidad o contexto | Opción a considerar | Motivo principal |
 |---|---|---|
@@ -470,6 +466,7 @@ Antes de decidir, conviene valorar:
 ---
 
 ## 8. Referencias para ampliar
+[Volver al índice](#Sumario)
 
 Fuentes oficiales recomendadas para mantener esta unidad actualizada:
 
@@ -485,10 +482,4 @@ Fuentes oficiales recomendadas para mantener esta unidad actualizada:
 
 ---
 
-## Actividades propuestas
 
-1. **Comparación tecnológica.** Elige una aplicación real y justifica si la desarrollarías con Compose, Flutter, React Native, KMP, .NET MAUI o Ionic/Capacitor.
-2. **Diseño adaptativo.** Diseña la misma pantalla para móvil compacto, tablet y plegable. Identifica qué cambia además del tamaño.
-3. **Arquitectura.** Dibuja el recorrido de un dato desde una API REST hasta una pantalla Compose usando Repository, ViewModel y `StateFlow`.
-4. **Recursos limitados.** Propón cinco cambios para que una aplicación funcione mejor con poca memoria, mala cobertura y batería limitada.
-5. **Investigación.** Compara una tecnología heredada de la unidad original (Xamarin, Cordova o Views XML) con su alternativa actual y explica qué motivó la evolución.

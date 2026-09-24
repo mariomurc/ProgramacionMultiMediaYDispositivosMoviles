@@ -23,7 +23,7 @@
 
 Los dispositivos móviles actuales ofrecen una gran capacidad de proceso, pero trabajan bajo restricciones distintas de las de un equipo de escritorio. Las limitaciones más relevantes no deben entenderse solo como falta de potencia, sino como un equilibrio entre **rendimiento, memoria, temperatura, autonomía, conectividad y ciclo de vida de la aplicación**.
 
-![Limitaciones relacionadas con el hardware](img/limitaciones-hardware.png)
+![Limitaciones relacionadas con el hardware](imagenes_unidad1/limitaciones-hardware.png)
 
 *Figura 1. Ilustración del documento original sobre las restricciones de hardware.*
 
@@ -66,7 +66,7 @@ En lugar de diseñar para un modelo concreto, es preferible trabajar con **capac
 
 ### 1.5. Seguridad y privacidad
 
-![Seguridad y privacidad en aplicaciones móviles](img/seguridad-privacidad.png)
+![Seguridad y privacidad en aplicaciones móviles](imagenes_unidad1/seguridad-privacidad.png)
 
 *Figura 2. Ilustración del documento original sobre seguridad y privacidad.*
 
@@ -104,7 +104,7 @@ Podemos distinguir tres grandes enfoques: **nativo**, **multiplataforma** e **h�
 
 ### 2.1. Desarrollo nativo
 
-![Desarrollo nativo para plataformas móviles](img/desarrollo-nativo.png)
+![Desarrollo nativo para plataformas móviles](imagenes_unidad1/desarrollo-nativo.png)
 
 *Figura 3. Ilustración del documento original asociada al desarrollo nativo.*
 
@@ -303,7 +303,7 @@ Una aplicación debe definir **requisitos mínimos y capacidades necesarias**, y
 
 ## 5. Estructura y arquitectura de aplicaciones móviles
 
-![Capas y componentes de una aplicación móvil](img/arquitectura-movil.png)
+![Capas y componentes de una aplicación móvil](imagenes_unidad1/arquitectura-movil.png)
 
 *Figura 4. Ilustración del documento original relacionada con arquitectura y componentes.*
 

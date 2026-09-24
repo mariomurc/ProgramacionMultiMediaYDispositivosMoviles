@@ -19,7 +19,7 @@
 
 ---
 
-## 1. Limitaciones en la ejecución de aplicaciones móviles `[Volver](#Sumario)`
+## 1. Limitaciones en la ejecución de aplicaciones móviles [Volver al índice](#Sumario)
 
 Los dispositivos móviles actuales ofrecen una gran capacidad de proceso, pero trabajan bajo restricciones distintas de las de un equipo de escritorio. Las limitaciones más relevantes no deben entenderse solo como falta de potencia, sino como un equilibrio entre **rendimiento, memoria, temperatura, autonomía, conectividad y ciclo de vida de la aplicación**.
 

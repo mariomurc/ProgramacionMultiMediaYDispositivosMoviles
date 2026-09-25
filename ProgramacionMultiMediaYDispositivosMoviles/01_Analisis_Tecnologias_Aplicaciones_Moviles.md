@@ -4,18 +4,6 @@
 **Ciclo:** 2.º DAM  
 **Revisión y actualización:** septiembre de 2026
 
-## Sumario
-
-1. [Limitaciones en la ejecución de aplicaciones móviles](#1-limitaciones-en-la-ejecución-de-aplicaciones-móviles)
-2. [Tecnologías de desarrollo](#2-tecnologías-de-desarrollo)
-3. [Clasificación y características de los dispositivos móviles](#3-clasificación-y-características-de-los-dispositivos-móviles)
-4. [Perfiles dispositivo-aplicación](#4-perfiles-dispositivo-aplicación)
-5. [Estructura y arquitectura de aplicaciones móviles](#5-estructura-y-arquitectura-de-aplicaciones-móviles)
-6. [Android Studio: instalación y configuración](#6-android-studio-instalación-y-configuración)
-7. [Criterios para elegir tecnología](#7-criterios-para-elegir-tecnología)
-8. [Referencias para ampliar](#8-referencias-para-ampliar)
-
----
 
 ## 1. Limitaciones en la ejecución de aplicaciones móviles
 

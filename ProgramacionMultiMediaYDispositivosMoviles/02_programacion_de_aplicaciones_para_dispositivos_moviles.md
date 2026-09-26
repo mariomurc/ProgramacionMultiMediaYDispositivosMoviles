@@ -312,9 +312,7 @@ Jetpack Compose utiliza componentes equivalentes escritos directamente en Kotlin
 <td style="text-align: center;"><p>LazyColumn {</p>
 <p>}</p>
 <p>[LazyColumn necesita:</p>
-&nbsp&nbsp<p>LazyColumn</p>
-&nbsp&nbsp<p>items()</p>
-&nbsp&nbsp<p>Composable</p>
+&nbsp&nbsp<p>LazyColumn - items() - Composable</p>
 <p>]</p></td>
 </tr>
 </tbody>

@@ -896,7 +896,7 @@ LazyColumn necesita:
 - Un composable.
 
 ### Ejercicio
-    a) Mostrar una lista de nombres usando LazyColumn.
+    a) Mostrar una lista de nombres de alumnos usando LazyColumn.
     b) Mostrar una Card para cada alumno.
 
 ### Reto

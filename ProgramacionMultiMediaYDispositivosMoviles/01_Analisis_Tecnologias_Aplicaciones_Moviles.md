@@ -353,10 +353,10 @@ UI en Compose
 
 Principios:
 
-- El **estado fluye hacia la UI**;
-- Los **eventos fluyen desde la UI** hacia quien gestiona el estado;
-- Debe existir una fuente de verdad clara;
-- La UI debe realizar el mínimo de lógica posible.
+- El **estado fluye hacia la UI**
+- Los **eventos fluyen desde la UI** hacia quien gestiona el estado
+- Debe existir una fuente de verdad clara
+- La UI debe realizar el mínimo de lógica posible
 
 ### 5.6. Ejemplo moderno con Kotlin y Jetpack Compose
 

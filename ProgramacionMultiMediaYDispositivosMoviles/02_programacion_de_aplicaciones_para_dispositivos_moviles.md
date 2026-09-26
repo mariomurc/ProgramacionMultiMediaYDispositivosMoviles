@@ -228,7 +228,7 @@ Jetpack Compose utiliza componentes equivalentes escritos directamente en Kotlin
 <tr>
 <td style="text-align: center;">&lt;TextView android:text="Hola"/&gt;</td>
 <td style="text-align: center;">Text(<br />
-text = "Hola"<br />
+&nbsp&nbsp&nbsp&nbsptext = "Hola"<br />
 )</td>
 </tr>
 <tr>

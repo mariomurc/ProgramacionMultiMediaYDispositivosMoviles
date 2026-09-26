@@ -325,7 +325,7 @@ La anotación:
 
 @Composable indica que la función dibuja elementos visuales.
 
-# 4.3. Eventos en Compose
+# 4.1. Eventos en Compose
 ```kotlin
 Button(
     onClick = {
@@ -341,7 +341,7 @@ El parámetro onClick contiene la lógica que se ejecutará al pulsar el botón.
     00_Contador
     01_SumaDosNumeros (Version XML y Composable)
 
-# 4.4. Estado en Compose
+# 4.2. Estado en Compose
 # Administrar el estado
 
 La gestión de estado en **Jetpack Compose** es un aspecto fundamental para crear interfaces reactivas y eficientes. Dado que **Jetpack Compose** está basado en la programación declarativa, el manejo del estado es crucial para actualizar la interfaz de usuario (UI) de forma adecuada. Vamos a hacer un tutorial en profundidad que cubra los conceptos clave, las herramientas proporcionadas por Compose, y algunos ejemplos prácticos.
@@ -460,7 +460,7 @@ fun Contador() {
 
 Para que el código anterior funcione, es necesario añadir los dos import `getValue` y `setValue`
 
-# 4.5. Vista previa de componentes con @Preview
+# 4.3. Vista previa de componentes con @Preview
 Cuando estamos creando una interfaz con Jetpack Compose, es habitual realizar pequeños cambios continuamente: modificar un texto, cambiar un color, ajustar un tamaño, añadir un componente, etc.
 
 Podríamos ejecutar la aplicación en el emulador cada vez que hacemos uno de estos cambios, pero durante el diseño de la interfaz existe una alternativa mucho más cómoda: **las vistas previas de Jetpack Compose mediante la anotación@Preview**.

@@ -302,7 +302,7 @@ En Android Studio encontramos todas las vistas y grupos de vistas para trabajar 
 
 Hay multitud de variantes y opciones a la hora de crear vistas y adaptarlas a las necesidades de nuestra aplicación.
 
-**4. Primera aplicación funcional**
+# 4. Primera aplicación funcional
 
 Hasta ahora usando XML podríamos interactuar pulsando un botón con este código:
 

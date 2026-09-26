@@ -222,18 +222,10 @@ Jetpack Compose utiliza componentes equivalentes escritos directamente en Kotlin
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">TextView</td>
-<td style="text-align: center;">Text</td>
-</tr>
-<tr>
 <td style="text-align: center;">&lt;TextView android:text="Hola"/&gt;</td>
 <td style="text-align: center;">Text(<br />
 &nbsp&nbsp&nbsp&nbsptext = "Hola"<br />
 )</td>
-</tr>
-<tr>
-<td style="text-align: center;">EditText</td>
-<td style="text-align: center;">TextField</td>
 </tr>
 <tr>
 <td style="text-align: center;">&lt;EditText android:hint="Nombre" /&gt;</td>
@@ -245,20 +237,12 @@ Jetpack Compose utiliza componentes equivalentes escritos directamente en Kotlin
 )</td>
 </tr>
 <tr>
-<td style="text-align: center;">Button</td>
-<td style="text-align: center;">Button</td>
-</tr>
-<tr>
 <td style="text-align: center;">&lt;Button android:text="Aceptar"/&gt;</td>
 <td style="text-align: left;">Button(<br />
 &nbsp&nbsp&nbsp&nbsponClick = { }<br />
 ) {<br />
 &nbsp&nbsp&nbsp&nbspText("Aceptar")<br />
 }</td>
-</tr>
-<tr>
-<td style="text-align: center;">ImageView</td>
-<td style="text-align: center;">Image</td>
 </tr>
 <tr>
 <td style="text-align: center;">&lt;ImageView android:src="@drawable/logo" /&gt;</td>
@@ -268,19 +252,9 @@ Jetpack Compose utiliza componentes equivalentes escritos directamente en Kotlin
 )</td>
 </tr>
 <tr>
-<td style="text-align: center;"><p>LinearLayout</p>
-<p>Vertical</p></td>
-<td style="text-align: center;">Column</td>
-</tr>
-<tr>
 <td style="text-align: center;">&lt;LinearLayout android:orientation="vertical"&gt;</td>
 <td style="text-align: center;"><p>Column {</p>
 <p>}</p></td>
-</tr>
-<tr>
-<td style="text-align: center;"><p>LinearLayout</p>
-<p>Horizontal</p></td>
-<td style="text-align: center;">Row</td>
 </tr>
 <tr>
 <td style="text-align: center;">&lt;LinearLayout android:orientation="horizontal"&gt;</td>
@@ -288,17 +262,9 @@ Jetpack Compose utiliza componentes equivalentes escritos directamente en Kotlin
 <p>}</p></td>
 </tr>
 <tr>
-<td style="text-align: center;">FrameLayout</td>
-<td style="text-align: center;">Box</td>
-</tr>
-<tr>
 <td style="text-align: center;">&lt;FrameLayout&gt;</td>
 <td style="text-align: center;"><p>Box {</p>
 <p>}</p></td>
-</tr>
-<tr>
-<td style="text-align: center;">RecyclerView</td>
-<td style="text-align: center;">LazyColumn</td>
 </tr>
 <tr>
 <td style="text-align: center;"><p>&lt;RecyclerView /&gt;</p>

@@ -304,17 +304,17 @@ Jetpack Compose utiliza componentes equivalentes escritos directamente en Kotlin
 <td style="text-align: center;"><p>&lt;RecyclerView /&gt;</p>
 <p>[</p>
 <p>RecyclerView necesita:</p>
-&nbsp&nbsp&nbsp&nbsp<p>RecyclerView</p>
-&nbsp&nbsp&nbsp&nbsp<p>Adapter</p>
-&nbsp&nbsp&nbsp&nbsp<p>ViewHolder</p>
-&nbsp&nbsp&nbsp&nbsp<p>LayoutManager</p>
+&nbsp&nbsp<p>RecyclerView</p>
+&nbsp&nbsp<p>Adapter</p>
+&nbsp&nbsp<p>ViewHolder</p>
+&nbsp&nbsp<p>LayoutManager</p>
 <p>]</p></td>
 <td style="text-align: center;"><p>LazyColumn {</p>
 <p>}</p>
 <p>[LazyColumn necesita:</p>
-&nbsp&nbsp&nbsp&nbsp<p>LazyColumn</p>
-&nbsp&nbsp&nbsp&nbsp<p>items()</p>
-&nbsp&nbsp&nbsp&nbsp<p>Composable</p>
+&nbsp&nbsp<p>LazyColumn</p>
+&nbsp&nbsp<p>items()</p>
+&nbsp&nbsp<p>Composable</p>
 <p>]</p></td>
 </tr>
 </tbody>
@@ -322,11 +322,9 @@ Jetpack Compose utiliza componentes equivalentes escritos directamente en Kotlin
 
 **Views (Vistas) y sus tipos**
 
-Las vistas son los bloques de construcción de la interfaz de usuario en Android. Son componentesque permitencontrolar la interacción del usuario con la aplicación. Estos son muy similares a los controles SWING de Java, como Labels,Buttons,TextFields,Checkboxes, etc. Los Views son organizados dentro de los Layouts para que el usuario comprenda los objetivos de la actividad.
+Las vistas son los bloques de construcción de la interfaz de usuario en Android. Son componentes que permiten controlar la interacción del usuario con la aplicación. Estos son muy similares a los controles SWING de Java, como Labels, Buttons, TextFields, Checkboxes, etc. Los Views son organizados dentro de los Layouts para que el usuario comprenda los objetivos de la actividad.
 
-Se pueden agrupar para formar interfaces de usuario más complejas
-
-Un ViewGroup es un contenedor que determina cómo se muestran las vistas.
+Se pueden agrupar para formar interfaces de usuario más complejas. Un ViewGroup es un contenedor que determina cómo se muestran las vistas.
 
 El ViewGroup es el padre y las vistas dentro de él son sus hijos. Algunos tipos de ViewGroups son:
 

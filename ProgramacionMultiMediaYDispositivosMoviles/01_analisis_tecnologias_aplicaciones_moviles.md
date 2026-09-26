@@ -1,4 +1,4 @@
-# README
+# Unidad 1. Análisis de tecnologías para aplicaciones en dispositivos móviles
 
 **Módulo:** Programación Multimedia y Dispositivos Móviles\
 **Ciclo:** 2.º DAM\
@@ -8,7 +8,7 @@
 
 Los dispositivos móviles actuales ofrecen una gran capacidad de proceso, pero trabajan bajo restricciones distintas de las de un equipo de escritorio. Las limitaciones más relevantes no deben entenderse solo como falta de potencia, sino como un equilibrio entre **rendimiento, memoria, temperatura, autonomía, conectividad y ciclo de vida de la aplicación**.
 
-![Limitaciones relacionadas con el hardware](<.gitbook/assets/limitaciones-hardware (1).png>)
+![Limitaciones relacionadas con el hardware](.gitbook/assets/limitaciones-hardware.png)
 
 _Figura 1. Ilustración del documento original sobre las restricciones de hardware._
 
@@ -32,7 +32,7 @@ Aspectos fundamentales:
 * Comprobar la compatibilidad con diferentes versiones del sistema operativo
 * Diseñar teniendo en cuenta cambios de configuración y recuperación de estado
 
-![Aplicaciones en Segundo Plano](<.gitbook/assets/desarrollo-nativo (1).png>)
+![Aplicaciones en Segundo Plano](.gitbook/assets/desarrollo-nativo.png)
 
 _Figura 2. Ilustración de configuración de Aplicaciones en 2º plano._
 
@@ -55,7 +55,7 @@ En lugar de diseñar para un modelo concreto, es preferible trabajar con **capac
 
 ### 1.5. Seguridad y privacidad
 
-![Seguridad y privacidad en aplicaciones móviles](<.gitbook/assets/seguridad-privacidad (1).png>)
+![Seguridad y privacidad en aplicaciones móviles](.gitbook/assets/seguridad-privacidad.png)
 
 _Figura 3. Ilustración del documento original sobre seguridad y privacidad._
 
@@ -282,7 +282,7 @@ Una aplicación debe definir **requisitos mínimos y capacidades necesarias**, y
 
 ## 5. Estructura y arquitectura de aplicaciones móviles
 
-![Capas y componentes de una aplicación móvil](<.gitbook/assets/arquitectura-movil (1).png>)
+![Capas y componentes de una aplicación móvil](.gitbook/assets/arquitectura-movil.png)
 
 _Figura 4. Ilustración del documento original relacionada con arquitectura y componentes._
 

@@ -759,3 +759,162 @@ También conviene probar:
 - diferentes estados visuales.
 
 Eso nos ayudará a encontrar problemas antes. 
+
+# 5. La clase Toast
+La clase Toast permite mostrar mensajes breves en pantalla.
+
+Un Toast:
+- No bloquea la aplicación.
+- No requiere interacción del usuario.
+- Desaparece automáticamente tras unos segundos.
+
+Se utiliza habitualmente para:
+- Confirmar acciones.
+- Mostrar errores sencillos.
+- Informar al usuario de que una operación se ha completado.
+
+Ejemplo:
+
+```kotlin
+Toast.makeText(this, "Operación realizada", Toast.LENGTH_SHORT ).show()
+```
+
+## Toast en Jetpack Compose
+Cuando trabajamos con Compose necesitamos obtener el contexto de la aplicación:
+
+```kotlin
+val context = LocalContext.current
+```
+Ejemplo:
+```kotlin
+Button(
+    onClick = { Toast.makeText(context, "Hola DAM", Toast.LENGTH_SHORT).show() }
+){
+    Text("Mostrar mensaje")
+}
+```
+
+## Reto
+Solicitar un nombre y una edad mediante un TextField y mostrar: "Hola [nombre], tienes [edad] años por tanto eres mayor/menor de edad" usando un Toast.
+
+# 6. Splash Screen
+La Splash Screen es la primera pantalla que aparece al arrancar una aplicación. Normalmente incluye:
+- Logotipo.
+- Nombre de la aplicación.
+- Color corporativo.
+
+Su principal objetivo es mejorar la experiencia inicial del usuario.
+
+## Splash Screen moderna
+Las versiones actuales de Android incorporan soporte nativo. 
+La configuración suele realizarse mediante:
+- themes.xml
+- AndroidManifest.xml
+
+La Activity principal continúa funcionando igual independientemente de si usamos XML o Compose.
+
+# 7. Evolución de las listas en Android
+Una de las formas que tiene Android para mostrar colecciones de datos es el uso de las estructuras:
+
+- ListView (XML)
+- RecyclerView (XML)
+- LazyColumn. (Compose)
+
+## 7.1 ListView y ArrayAdapter
+### Estado actual
+LEGACY
+
+Es importante conocerlo porque aparecen en aplicaciones antiguas. Sin embargo, actualmente apenas se utiliza en proyectos nuevos.
+
+### ¿Qué es un ArrayAdapter?
+Un adaptador actúa como puente entre:
+- Los datos.
+- El componente visual.
+
+Ejemplo:
+
+```kotlin
+val ciudades = arrayOf( "Madrid", "Toledo", "Sevilla" )
+val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, ciudades )
+```
+
+## 7.2 RecyclerView
+### Estado actual
+USADO
+
+RecyclerView sigue apareciendo en multitud de aplicaciones profesionales.
+
+### ¿Qué es RecyclerView?
+RecyclerView mejora el rendimiento reutilizando vistas. En lugar de crear continuamente nuevos elementos:
+
+- Los recicla.
+- Los reutiliza.
+- Consume menos memoria.
+
+### Elementos principales
+#### RecyclerView
+Zona donde se muestran los datos.
+
+#### Adapter
+Conecta datos e interfaz.
+
+#### ViewHolder
+Representa una fila individual.
+
+#### Dataset
+Colección de información.
+
+## 7.3 LazyColumn (Jetpack Compose)
+Es la alternativa moderna a RecyclerView y permite mostrar colecciones de datos utilizando Compose.
+
+Ejemplo:
+
+```kotlin
+LazyColumn {
+    items(alumnos) { alumno ->
+        Text(alumno.nombre)
+    }
+}
+```
+
+### Ventajas
+- Menos código.
+- No necesita Adapter.
+- No necesita ViewHolder.
+- Más fácil de mantener.
+
+### Equivalencia conceptual
+RecyclerView necesita:
+
+- Adapter
+- ViewHolder
+- Item XML
+
+LazyColumn necesita:
+
+- Una lista.
+- Un composable.
+
+### Ejercicio
+    a) Mostrar una lista de nombres usando LazyColumn.
+    b) Mostrar una Card para cada alumno.
+
+### Reto
+Crear un catálogo de videojuegos usando: Card() LazyColumn() Image() Text()
+
+### Ejercicio
+Crear un listado de películas mediante LazyColumn mostrando:
+    - Título.
+    - Año.
+    - Imagen.
+
+### Proyecto de bloque
+Aplicación "Catálogo de Videojuegos"
+
+Requisitos:
+
+    - Lista de videojuegos.
+    - Imagen.
+    - Título.
+    - Género.
+    - Toast al pulsar un elemento.

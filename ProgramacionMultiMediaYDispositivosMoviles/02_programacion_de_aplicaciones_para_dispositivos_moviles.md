@@ -238,9 +238,9 @@ Jetpack Compose utiliza componentes equivalentes escritos directamente en Kotlin
 <tr>
 <td style="text-align: center;">&lt;EditText android:hint="Nombre" /&gt;</td>
 <td style="text-align: center;">TextField(<br />
-value = nombre,<br />
-onValueChange = {<br />
-nombre = it<br />
+&nbsp&nbsp&nbsp&nbspvalue = nombre,<br />
+&nbsp&nbsp&nbsp&nbsponValueChange = {<br />
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspnombre = it<br />
 }<br />
 )</td>
 </tr>
@@ -251,9 +251,9 @@ nombre = it<br />
 <tr>
 <td style="text-align: center;">&lt;Button android:text="Aceptar"/&gt;</td>
 <td style="text-align: left;">Button(<br />
-onClick = { }<br />
+&nbsp&nbsp&nbsp&nbsponClick = { }<br />
 ) {<br />
-Text("Aceptar")<br />
+&nbsp&nbsp&nbsp&nbspText("Aceptar")<br />
 }</td>
 </tr>
 <tr>
@@ -263,8 +263,8 @@ Text("Aceptar")<br />
 <tr>
 <td style="text-align: center;">&lt;ImageView android:src="@drawable/logo" /&gt;</td>
 <td style="text-align: center;">Image(<br />
-painter = painterResource(R.drawable.logo),<br />
-contentDescription = null<br />
+&nbsp&nbsp&nbsp&nbsppainter = painterResource(R.drawable.logo),<br />
+&nbsp&nbsp&nbsp&nbspcontentDescription = null<br />
 )</td>
 </tr>
 <tr>
@@ -304,17 +304,17 @@ contentDescription = null<br />
 <td style="text-align: center;"><p>&lt;RecyclerView /&gt;</p>
 <p>[</p>
 <p>RecyclerView necesita:</p>
-<p>RecyclerView</p>
-<p>Adapter</p>
-<p>ViewHolder</p>
-<p>LayoutManager</p>
+&nbsp&nbsp&nbsp&nbsp<p>RecyclerView</p>
+&nbsp&nbsp&nbsp&nbsp<p>Adapter</p>
+&nbsp&nbsp&nbsp&nbsp<p>ViewHolder</p>
+&nbsp&nbsp&nbsp&nbsp<p>LayoutManager</p>
 <p>]</p></td>
 <td style="text-align: center;"><p>LazyColumn {</p>
 <p>}</p>
 <p>[LazyColumn necesita:</p>
-<p>LazyColumn</p>
-<p>items()</p>
-<p>Composable</p>
+&nbsp&nbsp&nbsp&nbsp<p>LazyColumn</p>
+&nbsp&nbsp&nbsp&nbsp<p>items()</p>
+&nbsp&nbsp&nbsp&nbsp<p>Composable</p>
 <p>]</p></td>
 </tr>
 </tbody>

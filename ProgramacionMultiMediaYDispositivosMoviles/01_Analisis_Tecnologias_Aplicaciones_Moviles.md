@@ -461,9 +461,3 @@ Fuentes oficiales recomendadas para mantener esta unidad actualizada:
 - OWASP, **Mobile Application Security Verification Standard**: <https://mas.owasp.org/MASVS/>
 
 ---
-
-1. **Comparación tecnológica.** Elige una aplicación real y justifica si la desarrollarías con Compose, Flutter, React Native, KMP, .NET MAUI o Ionic/Capacitor.
-2. **Diseño adaptativo.** Diseña la misma pantalla para móvil compacto, tablet y plegable. Identifica qué cambia además del tamaño.
-3. **Arquitectura.** Dibuja el recorrido de un dato desde una API REST hasta una pantalla Compose usando Repository, ViewModel y `StateFlow`.
-4. **Recursos limitados.** Propón cinco cambios para que una aplicación funcione mejor con poca memoria, mala cobertura y batería limitada.
-5. **Investigación.** Compara una tecnología heredada de la unidad original (Xamarin, Cordova o Views XML) con su alternativa actual y explica qué motivó la evolución.

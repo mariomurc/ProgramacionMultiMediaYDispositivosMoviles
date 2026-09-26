@@ -297,10 +297,10 @@ Responsable de renderizar el estado y capturar eventos del usuario.
 
 En Android moderno:
 
-- Funciones `@Composable`;
-- `ViewModel` como *state holder* a nivel de pantalla;
-- `StateFlow` o estado observable;
-- Navigation para navegación entre destinos.
+- Funciones `@Composable`
+- `ViewModel` como *state holder* a nivel de pantalla
+- `StateFlow` o estado observable
+- Navigation para navegación entre destinos
 
 Activities, Fragments y Views continúan siendo relevantes para interoperabilidad y proyectos basados en el toolkit clásico.
 
@@ -397,28 +397,25 @@ En proyectos medianos o grandes, la inyección de dependencias ayuda a desacopla
 
 Una arquitectura separada permite probar:
 
-- lógica de negocio con tests unitarios;
-- repositorios mediante dobles de prueba;
-- `ViewModel` y transformaciones de estado;
-- UI y navegación con tests instrumentados o de Compose.
+- lógica de negocio con tests unitarios
+- repositorios mediante dobles de prueba
+- `ViewModel` y transformaciones de estado
+- UI y navegación con tests instrumentados o de Compose
 
 ---
 
 ## 6. Android Studio: instalación y configuración
 
-La instalación detallada puede mantenerse en el **Anexo I**, pero conviene que el anexo cubra actualmente:
+La instalación detallada puede [AQUI](https://developer.android.com/studio/install?hl=es-419), pero conviene recordar los mínimos que deberíamos cubrir actualmente:
 
-1. descarga e instalación de una versión estable de Android Studio;
+1. Descarga e instalación de una versión estable de Android Studio;
 2. SDK Manager y plataformas necesarias;
-3. creación de un emulador desde Device Manager;
-4. configuración de un dispositivo físico y depuración USB;
-5. creación de un proyecto **Empty Activity con Jetpack Compose**;
-6. estructura Gradle del proyecto y gestión de dependencias;
-7. ejecución, Logcat y herramientas básicas de depuración;
-8. perfiles de CPU, memoria y energía;
-9. uso básico de Git desde el IDE.
-
-> Evita fijar en los apuntes una versión concreta de Android Studio salvo que el anexo se regenere cada curso. Es preferible indicar "última versión estable compatible con el SDK utilizado en clase".
+3. Creación de un emulador desde Device Manager;
+4. Configuración de un dispositivo físico y depuración USB;
+5. Creación de un proyecto **Empty Activity con Jetpack Compose**;
+6. Estructura Gradle del proyecto y gestión de dependencias;
+7. Ejecución, Logcat y herramientas básicas de depuración;
+8. uso básico de Git desde el IDE.
 
 ---
 
@@ -438,14 +435,14 @@ La instalación detallada puede mantenerse en el **Anexo I**, pero conviene que 
 
 Antes de decidir, conviene valorar:
 
-- plataformas de destino;
-- experiencia previa del equipo;
-- acceso necesario a APIs nativas;
-- rendimiento y complejidad gráfica;
-- grado deseado de reutilización de código;
-- madurez y mantenimiento del ecosistema;
-- accesibilidad y experiencia específica de plataforma;
-- estrategia de pruebas, CI/CD y publicación.
+- Plataformas de destino;
+- Experiencia previa del equipo;
+- Acceso necesario a APIs nativas;
+- Rendimiento y complejidad gráfica;
+- Grado deseado de reutilización de código;
+- Madurez y mantenimiento del ecosistema;
+- Accesibilidad y experiencia específica de plataforma;
+- Estrategia de pruebas, CI/CD y publicación.
 
 ---
 
@@ -464,8 +461,6 @@ Fuentes oficiales recomendadas para mantener esta unidad actualizada:
 - OWASP, **Mobile Application Security Verification Standard**: <https://mas.owasp.org/MASVS/>
 
 ---
-
-## Actividades propuestas
 
 1. **Comparación tecnológica.** Elige una aplicación real y justifica si la desarrollarías con Compose, Flutter, React Native, KMP, .NET MAUI o Ionic/Capacitor.
 2. **Diseño adaptativo.** Diseña la misma pantalla para móvil compacto, tablet y plegable. Identifica qué cambia además del tamaño.

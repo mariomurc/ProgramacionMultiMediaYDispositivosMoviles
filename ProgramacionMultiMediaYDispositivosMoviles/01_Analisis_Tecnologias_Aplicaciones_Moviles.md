@@ -35,7 +35,7 @@ Aspectos fundamentales:
 
 ![Aplicaciones en Segundo Plano](img/desarrollo-nativo.png)
 
-*Figura 3. Ilustración de configuración de Aplicaciones en 2º plano.*
+*Figura 2. Ilustración de configuración de Aplicaciones en 2º plano.*
 
 ### 1.3. Conectividad
 
@@ -58,7 +58,7 @@ En lugar de diseñar para un modelo concreto, es preferible trabajar con **capac
 
 ![Seguridad y privacidad en aplicaciones móviles](img/seguridad-privacidad.png)
 
-*Figura 2. Ilustración del documento original sobre seguridad y privacidad.*
+*Figura 3. Ilustración del documento original sobre seguridad y privacidad.*
 
 Una aplicación móvil segura debe aplicar, entre otras, estas prácticas:
 

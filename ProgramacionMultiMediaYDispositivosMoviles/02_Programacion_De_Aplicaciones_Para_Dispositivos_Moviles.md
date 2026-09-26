@@ -5,7 +5,7 @@
 **Ciclo:** 2.º DAM  
 **Revisión y actualización:** septiembre de 2026
 
-# 1. Primera clase en un proyecto Android Studio
+## 1. Primera clase en un proyecto Android Studio
 Cuando creamos un proyecto Android vacío, Android Studio genera automáticamente una clase principal denominada **MainActivity**.
 
 ```kotlin
@@ -27,15 +27,15 @@ En este código aparecen conceptos que ya conocemos de Kotlin:
 
 - Llamadas a métodos de la superclase.
 
-## 1.1. Explicación básica
-### Clase Principal
+### 1.1. Explicación básica
+#### Clase Principal
 ```kotlin
 class MainActivity : AppCompatActivity()
 ```
 
 Define una Activity, es decir, una pantalla de nuestra aplicación mediante la clase MainActivity, que hereda de AppCompatActivity. AppCompatActivity es una clase base proporcionada por Android para actividades (pantallas) que desean ser compatibles con versiones anteriores del sistema operativo. En este caso, la MainActivity será la actividad principal de la aplicación.
 
-### Método onCreate()
+#### Método onCreate()
 ```kotlin
 override fun onCreate(savedInstanceState: Bundle?)
 ```
@@ -44,14 +44,14 @@ Es el primer método que se ejecuta cuando la Activity es creada. Esta línea so
 
 El parámetro savedInstanceState: Bundle? contiene datos sobre el estado anterior de la actividad, si es que fue destruida y creada nuevamente (por ejemplo, al rotar la pantalla).
 
-### Llamada a la superclase
+#### Llamada a la superclase
 ```kotlin
 super.onCreate(savedInstanceState)
 ```
 
 Esta línea llama al método onCreate de la clase base (AppCompatActivity) para asegurar que el ciclo de vida básico de la actividad se gestione correctamente antes de añadir más lógica personalizada.
 
-## 1.2. Creación de interfaces: XML vs Compose
+### 1.2. Creación de interfaces: XML vs Compose
 Tradicionalmente la interfaz se definía en un archivo XML:
 
 ```kotlin
@@ -62,7 +62,7 @@ Este método carga el diseño definido en:
 
     res/layout/activity_main.xml
 
-### Ejemplo tradicional
+#### Ejemplo tradicional
 XML
 
 ```xml
@@ -83,13 +83,13 @@ Text("Hola Mundo")
 }
 ```
 
-### Hay una idea clave en toda esta evolución:
-### La Activity sigue existiendo. Lo que cambia es la forma de construir la interfaz gráfica.
-# <span class="mark"></span>
+#### Hay una idea clave en toda esta evolución:
+#### La Activity sigue existiendo. Lo que cambia es la forma de construir la interfaz gráfica.
+## <span class="mark"></span>
 
-# <span class="mark"></span>
+## <span class="mark"></span>
 
-# 2. Ciclo de vida de una aplicación Android<span class="mark"></span>
+## 2. Ciclo de vida de una aplicación Android<span class="mark"></span>
 Toda Activity pasa por una serie de estados durante su existencia. El ciclo de vida es independiente de que utilicemos XML o Jetpack Compose.
 
 Las principales fases son:

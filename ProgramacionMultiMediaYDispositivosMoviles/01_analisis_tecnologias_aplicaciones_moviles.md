@@ -4,7 +4,7 @@
 **Ciclo:** 2.º DAM\
 **Revisión y actualización:** septiembre de 2026
 
-## 1. Limitaciones en la ejecución de aplicaciones móviles
+## Limitaciones en la ejecución de aplicaciones móviles
 
 Los dispositivos móviles actuales ofrecen una gran capacidad de proceso, pero trabajan bajo restricciones distintas de las de un equipo de escritorio. Las limitaciones más relevantes no deben entenderse solo como falta de potencia, sino como un equilibrio entre **rendimiento, memoria, temperatura, autonomía, conectividad y ciclo de vida de la aplicación**.
 
@@ -12,7 +12,7 @@ Los dispositivos móviles actuales ofrecen una gran capacidad de proceso, pero t
 
 _Figura 1. Ilustración del documento original sobre las restricciones de hardware._
 
-### 1.1. Hardware
+### Hardware
 
 * **CPU, GPU y aceleradores especializados.** El rendimiento disponible depende del SoC y de la carga de trabajo. En móvil son especialmente importantes el consumo energético y la disipación térmica. Un proceso intenso y sostenido puede provocar _thermal throttling_.
 * **Memoria RAM.** Android e iOS pueden finalizar procesos que permanecen en segundo plano cuando necesitan recuperar memoria. La aplicación debe poder reconstruir su estado.
@@ -20,7 +20,7 @@ _Figura 1. Ilustración del documento original sobre las restricciones de hardwa
 * **Batería.** GPS, cámara, pantalla, red móvil, procesamiento continuo y tareas en segundo plano pueden tener un coste energético elevado.
 * **Pantalla y factor de forma.** Una interfaz moderna debe adaptarse a distintos tamaños, orientaciones, densidades, tablets y dispositivos plegables.
 
-### 1.2. Software y ciclo de vida
+### Software y ciclo de vida
 
 Android e iOS aíslan las aplicaciones mediante mecanismos de seguridad y restringen el acceso al hardware y a los datos personales. El sistema operativo controla además cuándo una aplicación puede continuar ejecutándose en segundo plano.
 
@@ -36,7 +36,7 @@ Aspectos fundamentales:
 
 _Figura 2. Ilustración de configuración de Aplicaciones en 2º plano._
 
-### 1.3. Conectividad
+### Conectividad
 
 Una aplicación móvil no debe asumir una conexión permanente, rápida ni estable.
 
@@ -47,13 +47,13 @@ Una aplicación móvil no debe asumir una conexión permanente, rápida ni estab
 
 Por tanto, resulta conveniente aplicar estrategias **offline-first** cuando el caso de uso lo permita: caché local, sincronización posterior, reintentos controlados e interfaces que comuniquen correctamente el estado de la conexión.
 
-### 1.4. Fragmentación y diversidad
+### Fragmentación y diversidad
 
 La fragmentación no se limita a la versión de Android. También intervienen tamaño y densidad de pantalla, arquitectura del procesador, sensores disponibles, personalizaciones del fabricante y factores de forma.
 
 En lugar de diseñar para un modelo concreto, es preferible trabajar con **capacidades**, layouts adaptativos y pruebas en una matriz representativa de dispositivos.
 
-### 1.5. Seguridad y privacidad
+### Seguridad y privacidad
 
 ![Seguridad y privacidad en aplicaciones móviles](.gitbook/assets/seguridad-privacidad.png)
 
@@ -71,13 +71,13 @@ Una aplicación móvil segura debe aplicar, entre otras, estas prácticas:
 
 Como referencia de buenas prácticas de seguridad móvil resulta útil **OWASP MASVS**.
 
-### 1.6. UX, accesibilidad y diseño adaptativo
+### UX, accesibilidad y diseño adaptativo
 
 La interfaz debe ser táctil, legible y accesible. Es importante contemplar contraste, tamaño de los objetivos táctiles, lectores de pantalla, escalado del texto y navegación coherente.
 
 El diseño adaptativo permite que una aplicación aproveche teléfonos, tablets y plegables sin limitarse a "estirar" una única pantalla.
 
-### 1.7. Rendimiento gráfico
+### Rendimiento gráfico
 
 Juegos, realidad aumentada, vídeo y animaciones requieren controlar el trabajo de CPU/GPU, la memoria gráfica y la temperatura. Debe medirse el rendimiento en dispositivos reales y evitar trabajo innecesario en cada frame.
 
@@ -87,11 +87,11 @@ Optimizar una aplicación móvil no significa únicamente hacerla rápida. Signi
 
 ***
 
-## 2. Tecnologías de desarrollo
+## Tecnologías de desarrollo
 
 Podemos distinguir tres grandes enfoques: **nativo**, **multiplataforma** e **híbrido basado en tecnologías web**. Ninguno es universalmente mejor; la elección depende del equipo, el producto y las plataformas objetivo.
 
-### 2.1. Desarrollo nativo
+### Desarrollo nativo
 
 #### Android
 
@@ -119,7 +119,7 @@ fun Greeting(name: String) {
 * **IDE:** Xcode.
 * **UI:** **SwiftUI** como enfoque declarativo moderno y UIKit como framework fundamental del ecosistema y del código existente.
 
-### 2.2. Desarrollo híbrido web: Ionic + Capacitor
+### Desarrollo híbrido web: Ionic + Capacitor
 
 Las aplicaciones híbridas permiten reutilizar HTML, CSS y JavaScript/TypeScript dentro de una aplicación que puede acceder a capacidades nativas.
 
@@ -139,7 +139,7 @@ Consideraciones:
 * Ciertas necesidades avanzadas pueden requerir código o plugins nativos
 * Hay que evaluar rendimiento y experiencia de usuario según el producto
 
-### 2.3. Desarrollo multiplataforma
+### Desarrollo multiplataforma
 
 #### React Native
 
@@ -180,7 +180,7 @@ Compose Multiplatform permite aprovechar conocimientos de Jetpack Compose para c
 
 **.NET MAUI** permite desarrollar con C# y XAML para Android, iOS, macOS y Windows compartiendo buena parte del proyecto y accediendo a APIs específicas cuando es necesario.
 
-### 2.4. Videojuegos
+### Videojuegos
 
 #### Unity
 
@@ -190,7 +190,7 @@ Motor multiplataforma ampliamente utilizado para 2D y 3D. Su lenguaje principal 
 
 Motor orientado a gráficos avanzados. Utiliza **C++** y permite programación visual mediante **Blueprints**.
 
-### 2.5. Una tendencia común: UI declarativa
+### Una tendencia común: UI declarativa
 
 El desarrollo moderno converge en interfaces descritas a partir del **estado**:
 
@@ -206,9 +206,9 @@ La idea importante para el alumnado no es memorizar APIs, sino comprender que **
 
 ***
 
-## 3. Clasificación y características de los dispositivos móviles
+## Clasificación y características de los dispositivos móviles
 
-### 3.1. Segmento de mercado
+### Segmento de mercado
 
 En lugar de asociar cada gama a cantidades fijas de RAM o a modelos concretos de procesador, es más duradero trabajar con perfiles relativos.
 
@@ -218,20 +218,20 @@ En lugar de asociar cada gama a cantidades fijas de RAM o a modelos concretos de
 
 La clasificación comercial cambia con rapidez y no sustituye a la medición del hardware real.
 
-### 3.2. Factor de forma
+### Factor de forma
 
 * **Smartphones.** Principal formato móvil.
 * **Tablets.** Ofrecen mayor superficie y requieren layouts que aprovechen el espacio.
 * **Plegables.** Introducen cambios de tamaño durante el uso, posturas y áreas de pantalla diferentes.
 * **Otros destinos relacionados.** Wearables, automoción, TV y dispositivos XR pueden usar tecnologías del mismo ecosistema, aunque requieren paradigmas de interacción propios.
 
-### 3.3. Sistema operativo
+### Sistema operativo
 
 * **Android:** presente en dispositivos de múltiples fabricantes y factores de forma.
 * **iOS/iPadOS:** ecosistema de Apple para iPhone e iPad.
 * **Otros ecosistemas:** pueden ser relevantes según mercado y objetivo del proyecto. No conviene mezclar plataformas actuales con Windows Phone o BlackBerry OS sin etiquetarlas como históricas.
 
-### 3.4. Conectividad
+### Conectividad
 
 El objetivo de ingeniería no es memorizar velocidades máximas teóricas, sino diseñar para entornos reales:
 
@@ -241,7 +241,7 @@ El objetivo de ingeniería no es memorizar velocidades máximas teóricas, sino 
 * Pérdida temporal de conexión;
 * Latencia variable y conexiones medidas.
 
-### 3.5. Batería
+### Batería
 
 Los mAh por sí solos no determinan la autonomía. También influyen pantalla, SoC, eficiencia del sistema, cobertura, carga de trabajo y patrón de uso.
 
@@ -249,11 +249,11 @@ Para desarrollo interesa medir **consumo energético** y detectar operaciones qu
 
 ***
 
-## 4. Perfiles dispositivo-aplicación
+## Perfiles dispositivo-aplicación
 
 Los perfiles ayudan a razonar sobre compatibilidad, pero no deben convertirse en una lista rígida de modelos o cifras.
 
-### 4.1. Perfil de recursos restringidos
+### Perfil de recursos restringidos
 
 Las aplicaciones compatibles con hardware modesto deben:
 
@@ -262,15 +262,15 @@ Las aplicaciones compatibles con hardware modesto deben:
 * Funcionar correctamente con red lenta o intermitente;
 * Evitar animaciones o gráficos innecesariamente costosos.
 
-### 4.2. Perfil generalista
+### Perfil generalista
 
 Representa el caso habitual: comunicación, multimedia, productividad, redes sociales y juegos moderados. Es un buen perfil de referencia para pruebas porque evita optimizar exclusivamente para dispositivos de gama alta.
 
-### 4.3. Perfil de alto rendimiento
+### Perfil de alto rendimiento
 
 Incluye juegos 3D, edición multimedia, visión artificial, realidad aumentada u otras cargas exigentes. Deben medirse FPS, memoria, batería, temperatura y tiempos de respuesta en dispositivos reales.
 
-### 4.4. Perfil especializado
+### Perfil especializado
 
 Aplicaciones que dependen de capacidades particulares: stylus, sensores, cámaras, NFC, dispositivos robustos, hardware médico o industrial, etc.
 
@@ -280,7 +280,7 @@ Una aplicación debe definir **requisitos mínimos y capacidades necesarias**, y
 
 ***
 
-## 5. Estructura y arquitectura de aplicaciones móviles
+## Estructura y arquitectura de aplicaciones móviles
 
 ![Capas y componentes de una aplicación móvil](.gitbook/assets/arquitectura-movil.png)
 
@@ -288,7 +288,7 @@ _Figura 4. Ilustración del documento original relacionada con arquitectura y co
 
 Las aplicaciones modernas suelen separar responsabilidades para mejorar mantenibilidad, testabilidad y escalabilidad.
 
-### 5.1. Capas habituales
+### Capas habituales
 
 #### Capa de presentación
 
@@ -316,11 +316,11 @@ Centraliza el acceso a las fuentes de información.
 * **Fuente remota:** APIs HTTP, servicios cloud, etc.
 * **DAO:** encapsula operaciones de persistencia cuando procede.
 
-### 5.2. Red y servicios
+### Red y servicios
 
 En Android son habituales clientes como **Retrofit** y **OkHttp** para APIs HTTP. En iOS, **URLSession** forma parte de las APIs del sistema. La aplicación debe gestionar errores, timeouts, cancelación, reintentos y ausencia de red.
 
-### 5.3. Persistencia local
+### Persistencia local
 
 * **Room:** abstracción sobre SQLite apropiada para datos estructurados en Android.
 * **DataStore:** solución moderna para preferencias y datos pequeños; es preferible a introducir `SharedPreferences` como primera opción en código nuevo.
@@ -328,13 +328,13 @@ En Android son habituales clientes como **Retrofit** y **OkHttp** para APIs HTTP
 
 Los datos sensibles no deben guardarse como preferencias en texto plano; deben utilizarse las soluciones seguras de cada plataforma.
 
-### 5.4. Notificaciones
+### Notificaciones
 
 * **Firebase Cloud Messaging (FCM):** infraestructura habitual para mensajería push, incluido Android y casos multiplataforma.
 * **Android:** APIs de notificación del sistema y canales de notificación.
 * **Apple:** UserNotifications y APNs para push.
 
-### 5.5. Arquitectura moderna en Android: MVVM + UDF
+### Arquitectura moderna en Android: MVVM + UDF
 
 MVC y MVP continúan siendo patrones útiles para comprender la evolución de la arquitectura. Para Android moderno interesa especialmente **MVVM combinado con flujo unidireccional de datos (UDF)**.
 
@@ -357,7 +357,7 @@ Principios:
 * Debe existir una fuente de verdad clara
 * La UI debe realizar el mínimo de lógica posible
 
-### 5.6. Ejemplo moderno con Kotlin y Jetpack Compose
+### Ejemplo moderno con Kotlin y Jetpack Compose
 
 ```kotlin
 data class UiState(
@@ -388,11 +388,11 @@ fun MainScreen(viewModel: MainViewModel) {
 
 Este ejemplo muestra la relación entre **estado, eventos, ViewModel y UI declarativa**, en lugar de centrar el aprendizaje inicial en `findViewById`.
 
-### 5.7. Inyección de dependencias
+### Inyección de dependencias
 
 En proyectos medianos o grandes, la inyección de dependencias ayuda a desacoplar clases y facilitar pruebas. En Android, **Hilt** es una opción integrada con el ecosistema Jetpack. El objetivo didáctico inicial debe ser comprender el principio: una clase recibe sus dependencias en lugar de crearlas internamente.
 
-### 5.8. Testing
+### Testing
 
 Una arquitectura separada permite probar:
 
@@ -403,7 +403,7 @@ Una arquitectura separada permite probar:
 
 ***
 
-## 6. Android Studio: instalación y configuración
+## Android Studio: instalación y configuración
 
 La instalación detallada puede [AQUI](https://developer.android.com/studio/install?hl=es-419), pero conviene recordar los mínimos que deberíamos cubrir actualmente:
 
@@ -418,7 +418,7 @@ La instalación detallada puede [AQUI](https://developer.android.com/studio/inst
 
 ***
 
-## 7. Criterios para elegir tecnología
+## Criterios para elegir tecnología
 
 | Necesidad o contexto              | Opción a considerar      | Motivo principal                                    |
 | --------------------------------- | ------------------------ | --------------------------------------------------- |
@@ -445,7 +445,7 @@ Antes de decidir, conviene valorar:
 
 ***
 
-## 8. Referencias para ampliar
+## Referencias para ampliar
 
 Fuentes oficiales recomendadas para mantener esta unidad actualizada:
 

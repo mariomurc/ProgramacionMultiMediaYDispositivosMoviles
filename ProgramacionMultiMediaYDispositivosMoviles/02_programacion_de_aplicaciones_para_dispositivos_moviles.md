@@ -94,7 +94,7 @@ Las principales fases son:
 - onStop()
 - onDestroy()
 
-![Ciclo de vida de una Activity](RA2_del1al5_media/image1.png)
+![Ciclo de vida de una Activity](img/image1.png)
 
 ## ¿Por qué es importante?
 Permite:
@@ -302,8 +302,7 @@ Jetpack Compose utiliza componentes equivalentes escritos directamente en Kotlin
 </tr>
 <tr>
 <td style="text-align: center;"><p>&lt;RecyclerView /&gt;</p>
-<p>[</p>
-<p>RecyclerView necesita:</p>
+<p>[RecyclerView necesita:</p>
 <p>RecyclerView - Adapter - ViewHolder - LayoutManager</p>
 <p>]</p></td>
 <td style="text-align: center;"><p>LazyColumn {</p>
@@ -323,15 +322,15 @@ Se pueden agrupar para formar interfaces de usuario más complejas. Un ViewGroup
 
 El ViewGroup es el padre y las vistas dentro de él son sus hijos. Algunos tipos de ViewGroups son:
 
-![Tipos de ViewGroup](RA2_del1al5_media/image2.png)
+![Tipos de ViewGroup](img/image2.png)
 
 Todos los elementos de una pantalla, deberían ir agrupados dentro de un ViewGroup.
 
 La representación jerárquica de un ViewGroup (LinearLayout) podría ser esta:
 
-![Jerarquía de un LinearLayout](RA2_del1al5_media/image3.png)
+![Jerarquía de un LinearLayout](img/image3.png)
 
-![Panel de vistas de Android Studio](RA2_del1al5_media/image4.png)
+![Panel de vistas de Android Studio](img/image4.png)
 
 En Android Studio encontramos todas las vistas y grupos de vistas para trabajar con XML con las que podemos interactuar en una ventana como la de la imagen derecha.
 

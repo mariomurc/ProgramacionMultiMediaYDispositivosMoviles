@@ -104,10 +104,10 @@ Permite:
 Cuando la Activity se crea por primera vez solemos cargar los elementos necesarios para que la aplicación funcione.
 
 Por ejemplo:
-- Conectar con una base de datos.
-- Cargar una lista de alumnos.
-- Inicializar un RecyclerView.
-- Preparar una conexión a internet.
+    - Conectar con una base de datos.
+    - Cargar una lista de alumnos.
+    - Inicializar un RecyclerView.
+    - Preparar una conexión a internet.
 <!-- -->
 
 - **Guardar estados.**
@@ -161,11 +161,10 @@ Los dispositivos móviles tienen memoria limitada.
 Cuando una Activity deja de utilizarse debemos liberar los recursos que ya no necesitamos.
 
 Ejemplos:
-
-- Cerrar conexiones con la base de datos.
-- Detener música.
-- Parar la cámara.
-- Cancelar peticiones de red.
+    - Cerrar conexiones con la base de datos.
+    - Detener música.
+    - Parar la cámara.
+    - Cancelar peticiones de red.
 
 Ejemplo:
 
@@ -178,9 +177,9 @@ override fun onDestroy() {
 
 **Ejemplo real:**
 Imagina una aplicación de Spotify. Si el usuario cierra la Activity y la aplicación sigue consumiendo recursos innecesariamente:
-- gastará batería
-- consumirá memoria
-- ralentizará el dispositivo
+    - gastará batería
+    - consumirá memoria
+    - ralentizará el dispositivo
 
 
 ### Transiciones de estados más habituales
@@ -196,12 +195,9 @@ Las interfaces Android están formadas por componentes visuales.
 Tradicionalmente estos componentes se denominan **Views** y se agrupan dentro de **ViewGroups**.
 
 ## Algunos ejemplos de Views
-- TextView
-- EditText
-- Button
-- ImageView
-- CheckBox
-- RadioButton
+    - TextView            - EditText
+    - Button              - ImageView
+    - CheckBox            - RadioButton
 
 ## Algunos ejemplos de ViewGroups
 - LinearLayout

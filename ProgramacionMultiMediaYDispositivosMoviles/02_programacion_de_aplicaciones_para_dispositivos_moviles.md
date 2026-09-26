@@ -121,8 +121,8 @@ Ejemplo: Un alumno está rellenando un formulario:
 
 Gira el dispositivo. Los datos desaparecen, sin guardar el estado:
 
-> Nombre:
-> Curso:
+    Nombre:
+    Curso: 
 
 Ejemplo sencillo:
 
@@ -144,12 +144,12 @@ Al volver a la aplicación quiere continuar exactamente donde estaba.
 No basta con guardar. También debemos recuperar esos datos cuando la Activity vuelva a crearse.
 
 Ejemplo:
-
+```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
-> super.onCreate(savedInstanceState)
+  super.onCreate(savedInstanceState)
   val nombre = savedInstanceState?.getString("nombre")
 }
-
+```
 **Ejemplo real:**
 
 Un usuario está viendo: **Alumno nº 145**
@@ -200,9 +200,9 @@ Tradicionalmente estos componentes se denominan **Views** y se agrupan dentro de
     - CheckBox            - RadioButton
 
 ## Algunos ejemplos de ViewGroups
-- LinearLayout
-- ConstraintLayout
-- FrameLayout
+    - LinearLayout
+    - ConstraintLayout
+    - FrameLayout
 
 Todos los elementos visuales deberían encontrarse organizados dentro de algún contenedor.
 

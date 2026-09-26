@@ -180,16 +180,6 @@ Compose Multiplatform permite aprovechar conocimientos de Jetpack Compose para c
 
 **.NET MAUI** permite desarrollar con C# y XAML para Android, iOS, macOS y Windows compartiendo buena parte del proyecto y accediendo a APIs específicas cuando es necesario.
 
-### Videojuegos
-
-#### Unity
-
-Motor multiplataforma ampliamente utilizado para 2D y 3D. Su lenguaje principal de scripting es **C#**.
-
-#### Unreal Engine
-
-Motor orientado a gráficos avanzados. Utiliza **C++** y permite programación visual mediante **Blueprints**.
-
 ### Una tendencia común: UI declarativa
 
 El desarrollo moderno converge en interfaces descritas a partir del **estado**:

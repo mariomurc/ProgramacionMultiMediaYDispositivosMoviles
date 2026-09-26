@@ -350,8 +350,10 @@ var contador by remember {
 
 Cuando una variable de estado cambia, Compose actualiza automáticamente la interfaz.
 
-## Ejemplos => 00_Contador
-## 01_SumaDosNumeros (Version XML y Composable)
+## Ejemplos => 
+00_Contador
+01_SumaDosNumeros (Version XML y Composable)
+
 # 4.5. Vista previa de componentes con @Preview
 Cuando estamos creando una interfaz con Jetpack Compose, es habitual realizar pequeños cambios continuamente: modificar un texto, cambiar un color, ajustar un tamaño, añadir un componente, etc.
 

@@ -304,15 +304,12 @@ Jetpack Compose utiliza componentes equivalentes escritos directamente en Kotlin
 <td style="text-align: center;"><p>&lt;RecyclerView /&gt;</p>
 <p>[</p>
 <p>RecyclerView necesita:</p>
-&nbsp&nbsp<p>RecyclerView</p>
-&nbsp&nbsp<p>Adapter</p>
-&nbsp&nbsp<p>ViewHolder</p>
-&nbsp&nbsp<p>LayoutManager</p>
+<p>RecyclerView - Adapter - ViewHolder - LayoutManager</p>
 <p>]</p></td>
 <td style="text-align: center;"><p>LazyColumn {</p>
 <p>}</p>
 <p>[LazyColumn necesita:</p>
-&nbsp&nbsp<p>LazyColumn - items() - Composable</p>
+<p>LazyColumn - items() - Composable</p>
 <p>]</p></td>
 </tr>
 </tbody>

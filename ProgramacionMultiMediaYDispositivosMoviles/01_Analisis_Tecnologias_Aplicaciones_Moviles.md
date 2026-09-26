@@ -246,7 +246,7 @@ El objetivo de ingeniería no es memorizar velocidades máximas teóricas, sino 
 
 Los mAh por sí solos no determinan la autonomía. También influyen pantalla, SoC, eficiencia del sistema, cobertura, carga de trabajo y patrón de uso.
 
-Para desarrollo interesa medir **consumo energético** y detectar operaciones que mantienen innecesariamente activos CPU, GPS, radio o pantalla.
+Para desarrollo interesa medir **consumo energético** y detectar operaciones que mantienen innecesariamente activos CPU, GPS o pantalla.
 
 ---
 

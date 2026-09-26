@@ -79,8 +79,8 @@ fun PantallaPrincipal() {
 }
 ```
 
-### Hay una idea clave en toda esta evolución:
-### La Activity sigue existiendo. Lo que cambia es la forma de construir la interfaz gráfica.
+Hay una idea clave en toda esta evolución:
+#### La Activity sigue existiendo. Lo que cambia es la forma de construir la interfaz gráfica.
 
 # 2. Ciclo de vida de una aplicación Android
 Toda Activity pasa por una serie de estados durante su existencia. El ciclo de vida es independiente de que utilicemos XML o Jetpack Compose.

@@ -501,7 +501,7 @@ Por tanto, podemos diferenciar entre **nuestro componente real (@Composable)**, 
 
 **Importante:** normalmente no añadiremos @Preview directamente a todos nuestros componentes. Crearemos funciones específicas de preview que llamen al componente que queremos visualizar.
 
-# Mostrar un fondo en la vista previa
+## Mostrar un fondo en la vista previa
 En algunos componentes puede resultar difícil distinguir sus límites si el fondo de la preview coincide con el color de nuestra interfaz.
 
 Podemos solicitar a Android Studio que muestre un fondo utilizando, por ejemplo:
@@ -516,7 +516,7 @@ fun SaludoPreview() {
 
 Ahora Android Studio mostrará un fondo detrás del componente. Esto será especialmente útil cuando empecemos a trabajar con diferentes colores, márgenes y contenedores.
 
-# Modificar el tamaño de la vista previa
+## Modificar el tamaño de la vista previa
 También podemos establecer el ancho y el alto disponibles mediante widthDp y heightDp. La documentación oficial de Compose permite definir manualmente estas dimensiones en lugar de utilizar el tamaño calculado automáticamente.
 
 Por ejemplo:
@@ -554,7 +554,7 @@ fun TarjetaGrandePreview() {
 
 De esta manera podemos detectar problemas relacionados con el tamaño disponible sin necesidad de modificar continuamente el emulador.
 
-# Poner nombre a nuestras vistas previas
+## Poner nombre a nuestras vistas previas
 Cuando empezamos a tener muchas previews puede resultar complicado identificarlas.
 
 Podemos utilizar el parámetro name:
@@ -585,9 +585,6 @@ fun MensajeCortoPreview() {
     Mensaje(texto = "Hola")
 }
 ```
-
- 
-
 y otra preview:
 
 ```kotlin
@@ -608,8 +605,7 @@ Esto introduce una idea muy importante:
 
 **Una preview no sirve únicamente para comprobar si algo queda bonito. También podemos utilizarla para comprobar cómo responde nuestro componente ante diferentes situaciones.**
 
-# Varias vistas previas del mismo
-# componente
+## Varias vistas previas del mismo componente
 Un mismo componente puede tener tantas funciones de preview como necesitemos.
 
 Imaginemos:
@@ -644,49 +640,33 @@ Esta posibilidad se vuelve especialmente interesante según aumente la complejid
 Por ejemplo, más adelante podríamos comprobar estados como:
 
 - Producto disponible.
-
 - Producto agotado.
-
 - Carrito vacío.
-
 - Carrito con productos.
-
 - Usuario conectado.
-
 - Usuario sin identificar.
-
 - Información cargando.
-
 - Error al recuperar la información.
 
 No necesitaremos aprender ahora cómo implementar todos esos estados. Lo importante es entender que **las previews pueden ayudarnos a visualizar diferentes situaciones de nuestra interfaz**.
 
-# @Preview no sustituye al emulador
-Es importante diferenciar ambas herramientas.
-
-Una preview está pensada principalmente para facilitar el **diseño y comprobación rápida de nuestra interfaz**.
-
-El emulador o dispositivo real nos permite ejecutar la aplicación y comprobar su comportamiento completo.
+## @Preview no sustituye al emulador
+Es importante diferenciar ambas herramientas. Una preview está pensada principalmente para facilitar el **diseño y comprobación rápida de nuestra interfaz**. El emulador o dispositivo real nos permite ejecutar la aplicación y comprobar su comportamiento completo.
 
 Por ejemplo, podemos utilizar @Preview para comprobar rápidamente:
 
-- cómo queda un botón;
-
-- la distribución de una tarjeta;
-
-- el aspecto de una pantalla;
-
-- distintos tamaños;
-
-- diferentes textos;
-
-- distintas configuraciones visuales.
+- Cómo queda un botón
+- La distribución de una tarjeta
+- El aspecto de una pantalla
+- Distintos tamaños
+- Diferentes textos
+- Distintas configuraciones visuales
 
 Mientras que necesitaremos ejecutar la aplicación cuando queramos comprobar su funcionamiento real y su integración con el resto de elementos.
 
 De hecho, una de las ventajas que Google destaca de @Preview es precisamente evitar depender constantemente del emulador mientras realizamos pequeños cambios sobre la interfaz.
 
-# Diseñar componentes pensando en las previews
+## Diseñar componentes pensando en las previews
 Existe una práctica muy recomendable que iremos aplicando durante el curso.
 
 Un componente resulta más sencillo de visualizar y reutilizar cuando **los datos que necesita se reciben mediante parámetros**.
@@ -734,11 +714,9 @@ fun TarjetaUsuarioNombreLargoPreview() {
 
 Este pequeño ejemplo anticipa una idea que será muy importante más adelante: **separar el estado de la representación visual de nuestros componentes**.
 
-La propia documentación de Compose recomienda estructurar las pantallas teniendo en cuenta el estado que reciben como entrada y los eventos que generan como salida para aprovechar mejor las previews.
+La propia documentación de Compose recomienda estructurar las pantallas teniendo en cuenta el estado que reciben como entrada y los eventos que generan como salida para aprovechar mejor las previews. Volveremos sobre esto cuando estudiemos el **estado en Jetpack Compose**.
 
-No es necesario profundizar todavía en esta arquitectura. Volveremos sobre ella cuando estudiemos el **estado en Jetpack Compose**.
-
-# Buenas prácticas con @Preview
+## Buenas prácticas con @Preview
 Cuando trabajemos con previews intentaremos seguir estas recomendaciones:
 
 ### 1. Separar el componente de su preview
@@ -763,11 +741,11 @@ Así no mezclamos la función real del componente con la utilizada para visualiz
 ### 2. Utilizar nombres descriptivos
 Si tenemos varias previews evitaremos nombres como:
 
-Plain Text, Preview1, Preview2 o Preview3
+    Plain Text, Preview1, Preview2 o Preview3
 
 Es preferible utilizar:
 
-Plain Text, ProductoDisponiblePreview, ProductoAgotadoPreview o ProductoNombreLargoPreview
+    Plain Text, ProductoDisponiblePreview, ProductoAgotadoPreview o ProductoNombreLargoPreview
 
 De esta manera sabemos inmediatamente qué situación estamos comprobando.
 
@@ -780,7 +758,6 @@ También conviene probar:
 - textos largos
 - componentes con poco espacio
 - información ausente cuando nuestro diseño lo permita
-
 - diferentes estados visuales.
 
 Eso nos ayudará a encontrar problemas antes. 

@@ -27,11 +27,15 @@ Android e iOS aíslan las aplicaciones mediante mecanismos de seguridad y restri
 
 Aspectos fundamentales:
 
-- Solicitar solo los **permisos mínimos necesarios**;
-- Asumir que el proceso puede detenerse y posteriormente recrearse;
-- Utilizar las APIs recomendadas para trabajo diferido y segundo plano;
-- Comprobar la compatibilidad con diferentes versiones del sistema operativo;
-- Diseñar teniendo en cuenta cambios de configuración y recuperación de estado.
+- Solicitar solo los **permisos mínimos necesarios**
+- Asumir que el proceso puede detenerse y posteriormente recrearse
+- Utilizar las APIs recomendadas para trabajo diferido y segundo plano
+- Comprobar la compatibilidad con diferentes versiones del sistema operativo
+- Diseñar teniendo en cuenta cambios de configuración y recuperación de estado
+
+![Aplicaciones en Segundo Plano](img/desarrollo-nativo.png)
+
+*Figura 3. Ilustración de configuración de Aplicaciones en 2º plano.*
 
 ### 1.3. Conectividad
 
@@ -89,10 +93,6 @@ Optimizar una aplicación móvil no significa únicamente hacerla rápida. Signi
 Podemos distinguir tres grandes enfoques: **nativo**, **multiplataforma** e **híbrido basado en tecnologías web**. Ninguno es universalmente mejor; la elección depende del equipo, el producto y las plataformas objetivo.
 
 ### 2.1. Desarrollo nativo
-
-![Desarrollo nativo para plataformas móviles](img/desarrollo-nativo.png)
-
-*Figura 3. Ilustración del documento original asociada al desarrollo nativo.*
 
 #### Android
 

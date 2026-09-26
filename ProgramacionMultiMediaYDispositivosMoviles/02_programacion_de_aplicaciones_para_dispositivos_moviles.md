@@ -1,5 +1,3 @@
-# 02\_Programacion\_De\_Aplicaciones\_Para\_Dispositivos\_Moviles
-
 ## Unidad 2. Programación de Aplicaciones para Dispositivos Móviles
 
 **Módulo:** Programación Multimedia y Dispositivos Móviles\

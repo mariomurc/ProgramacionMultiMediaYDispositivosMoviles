@@ -113,9 +113,6 @@ Las principales características son:
 * Optimización del rendimiento: Jetpack Compose utiliza menos jerarquías de vistas que el enfoque basado en XML, lo que puede mejorar el rendimiento en términos de memoria y procesamiento.
 * Compatibilidad con vistas heredadas: Aunque es un enfoque moderno, Compose es compatible con vistas tradicionales de Android, lo que permite mezclar ambas técnicas si es necesario.
 
-Hay una idea clave en toda esta evolución:
-#### La Activity sigue existiendo. Lo que cambia es la forma de construir la interfaz gráfica.
-
 # 2. Ciclo de vida de una aplicación Android
 Toda Activity pasa por una serie de estados durante su existencia. El ciclo de vida es independiente de que utilicemos XML o Jetpack Compose.
 

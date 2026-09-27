@@ -82,10 +82,10 @@ XML
 ```
 Las principales características son:
 
-a) Las vistas se describen mediante XML, pero la lógica de interacción se maneja en código Java o Kotlin.
-b) Jerarquía de vistas: Las vistas (Views) se anidan en una estructura jerárquica, donde cada componente ocupa un espacio en memoria.
-c) UI Imperativa: Aunque la estructura de la interfaz es declarativa (XML), su manipulación en tiempo de ejecución es más imperativa. Es decir, el desarrollador debe actualizar las vistas manualmente a través de código cuando cambien los datos.
-d) Fragmentación del código: El diseño y la lógica se manejan en archivos separados (XML y código Java/Kotlin).
+    - Las vistas se describen mediante XML, pero la lógica de interacción se maneja en código Java o Kotlin.
+    - Jerarquía de vistas: Las vistas (Views) se anidan en una estructura jerárquica, donde cada componente ocupa un espacio en memoria.
+    - UI Imperativa: Aunque la estructura de la interfaz es declarativa (XML), su manipulación en tiempo de ejecución es más imperativa. Es decir, el desarrollador debe actualizar las vistas manualmente a través de código cuando cambien los datos.
+    - Fragmentación del código: El diseño y la lógica se manejan en archivos separados (XML y código Java/Kotlin).
 
 Actualmente Google recomienda utilizar **Jetpack Compose**, un sistema moderno basado en Kotlin. Jetpack Compose es un moderno kit de herramientas declarativo de Android que permite crear interfaces de usuario completamente en código, sin necesidad de XML. Lanzado oficialmente por Google en 2020, Jetpack Compose está escrito en Kotlin y simplifica la creación de interfaces gracias a un enfoque declarativo, inspirado por frameworks como React o SwiftUI.
 
@@ -108,11 +108,11 @@ fun PantallaPrincipal() {
 
 Las principales características son:
 
-a) Declarativo completo: La interfaz se construye mediante código declarativo. Se describe el estado de la UI y Jetpack Compose se encarga de renderizar los cambios cuando el estado subyacente cambia.
-b) UI Reactiva: La interfaz está vinculada al estado de los datos. Si el estado cambia, la UI se actualiza automáticamente, sin necesidad de manipular manualmente las vistas.
-c) Menos fragmentación: Todo, desde el diseño de la UI hasta la lógica, puede estar en el mismo archivo, lo que facilita el manejo del código.
-d) Optimización del rendimiento: Jetpack Compose utiliza menos jerarquías de vistas que el enfoque basado en XML, lo que puede mejorar el rendimiento en términos de memoria y procesamiento.
-e) Compatibilidad con vistas heredadas: Aunque es un enfoque moderno, Compose es compatible con vistas tradicionales de Android, lo que permite mezclar ambas técnicas si es necesario.
+    - Declarativo completo: La interfaz se construye mediante código declarativo. Se describe el estado de la UI y Jetpack Compose se encarga de renderizar los cambios cuando el estado subyacente cambia.
+    - UI Reactiva: La interfaz está vinculada al estado de los datos. Si el estado cambia, la UI se actualiza automáticamente, sin necesidad de manipular manualmente las vistas.
+    - Menos fragmentación: Todo, desde el diseño de la UI hasta la lógica, puede estar en el mismo archivo, lo que facilita el manejo del código.
+    - Optimización del rendimiento: Jetpack Compose utiliza menos jerarquías de vistas que el enfoque basado en XML, lo que puede mejorar el rendimiento en términos de memoria y procesamiento.
+    - Compatibilidad con vistas heredadas: Aunque es un enfoque moderno, Compose es compatible con vistas tradicionales de Android, lo que permite mezclar ambas técnicas si es necesario.
 
 Hay una idea clave en toda esta evolución:
 #### La Activity sigue existiendo. Lo que cambia es la forma de construir la interfaz gráfica.

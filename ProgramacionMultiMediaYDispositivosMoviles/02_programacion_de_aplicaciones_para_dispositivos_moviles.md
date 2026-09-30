@@ -892,26 +892,28 @@ LazyColumn necesita:
 ### Ejercicio 2
 Construye un proyecto Kotlin Compose como el siguiente:
 
-![Sumar con RadioButton](img/02_1_sumarConRadio.png)
-
-
-
+![Suma-Resta con RadioButton](img/02_1_sumarConRadio.png)
 
 ### Ejercicio 3
+Construye un proyecto Kotlin Compose como el siguiente:
 
-
-
+![Suma-Resta con CheckBox](img/02_2_sumcarconCheckBox.png)
 
 ### Ejercicio 4
+Construye un proyecto Kotlin Compose como el siguiente:
 
-
-
+![Operar con Desplegable](img/02_3_operarConDesplegable.png)
 
 ### Ejercicio 5
+Construye un proyecto Kotlin Compose como el siguiente:
 
-
+![Selección](img/02_4_selección.png)
 
 ### Ejercicio 6
+Construye un proyecto Kotlin Compose como el siguiente:
+
+![Verificar User-Pass](img/02_5_verificacionUserNamePass.png)
+
 
 
 ### Ejercicio

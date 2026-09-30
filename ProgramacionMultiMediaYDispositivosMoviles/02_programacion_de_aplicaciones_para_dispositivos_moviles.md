@@ -889,49 +889,45 @@ LazyColumn necesita:
 - Una lista.
 - Un composable.
 
-### Ejercicio 2
+## Ejercicio 2
 Construye un proyecto Kotlin Compose como el siguiente:
 
 ![Suma-Resta con RadioButton](img/02_1_sumarConRadio.png)
 
-### Ejercicio 3
+## Ejercicio 3
 Construye un proyecto Kotlin Compose como el siguiente:
 
 ![Suma-Resta con CheckBox](img/02_2_sumcarconCheckBox.png)
 
-### Ejercicio 4
+## Ejercicio 4
 Construye un proyecto Kotlin Compose como el siguiente:
 
 ![Operar con Desplegable](img/02_3_operarConDesplegable.png)
 
-### Ejercicio 5
+## Ejercicio 5
 Construye un proyecto Kotlin Compose como el siguiente:
 
 ![Selección](img/02_4_selección.png)
 
-### Ejercicio 6
+## Ejercicio 6
 Construye un proyecto Kotlin Compose como el siguiente:
 
 ![Verificar User-Pass](img/02_5_verificacionUserNamePass.png)
 
 
-
-### Ejercicio
+## Ejercicio
     a) Mostrar una lista de nombres de alumnos usando LazyColumn.
     b) Mostrar una Card para cada alumno.
 
-### Reto
-Crear un catálogo de videojuegos usando: Card() LazyColumn() Image() Text()
-
-### Ejercicio
+## Ejercicio
 Crear un listado de películas mediante LazyColumn mostrando:
     - Título.
     - Año.
     - Imagen.
 
-### Proyecto de bloque
+## Proyecto de bloque
 Aplicación "Catálogo de Videojuegos"
-
+Crear un catálogo de videojuegos usando: Card() LazyColumn() Image() Text()
 Requisitos:
 
     - Lista de videojuegos.

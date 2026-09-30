@@ -560,42 +560,13 @@ fun TarjetaPreview() {
 }
 ```
 
-Esto puede ayudarnos a comprobar qué sucede cuando nuestro componente dispone de más o menos espacio.
-
-```kotlin
-@Preview( showBackground = true, widthDp = 150 )
-@Composable
-fun TarjetaPequenaPreview() {
-    Tarjeta()
-}
-```
-
-Frente a:
-
-```kotlin
-@Preview(
-    showBackground = true,
-    widthDp = 400
-)
-@Composable
-fun TarjetaGrandePreview() {
-    Tarjeta()
-}
-```
-
-De esta manera podemos detectar problemas relacionados con el tamaño disponible sin necesidad de modificar continuamente el emulador.
-
 ## Poner nombre a nuestras vistas previas
 Cuando empezamos a tener muchas previews puede resultar complicado identificarlas.
 
 Podemos utilizar el parámetro name:
 
 ```kotlin
-@Preview(
-    name = "Tarjeta pequeña",
-    showBackground = true,
-    widthDp = 200
-)
+@Preview(name = "Tarjeta pequeña", showBackground = true, widthDp = 200)
 @Composable
 fun TarjetaPequenaPreview() {
     Tarjeta()
@@ -607,10 +578,7 @@ El nombre nos permitirá reconocer con mayor facilidad qué situación estamos r
 Por ejemplo, podríamos tener:
 
 ```kotlin
-@Preview(
-    name = "Texto corto",
-    showBackground = true
-)
+@Preview(name = "Texto corto",showBackground = true)
 @Composable
 fun MensajeCortoPreview() {
     Mensaje(texto = "Hola")
@@ -620,10 +588,7 @@ y otra preview:
 
 ```kotlin
 Kotlin
-@Preview(
-    name = "Texto largo",
-    showBackground = true
-)
+@Preview(name = "Texto largo", showBackground = true)
 @Composable
 fun MensajeLargoPreview() {
     Mensaje(
@@ -659,9 +624,8 @@ fun UsuarioPreview() {
 @Preview(showBackground = true)
 @Composable
 fun UsuarioNombreLargoPreview() {
-    Usuario(
-        nombre = "Alejandro
-    }
+    Usuario(nombre = "Alejandro)
+}
 ```
 
 Incluso es posible aplicar @Preview varias veces para visualizar un mismo composable con diferentes propiedades. Android Studio ofrece modos de visualización para trabajar con varias previews simultáneamente.
@@ -706,10 +670,7 @@ Por ejemplo, es preferible tener:
 
 ```kotlin
 @Composable
-fun TarjetaUsuario(
-    nombre: String,
-    ciudad: String
-) {
+fun TarjetaUsuario(nombre: String,ciudad: String) {
     Column {
         Text(text = nombre)
         Text(text = ciudad)

@@ -891,6 +891,7 @@ LazyColumn necesita:
 
 ### Ejercicio 2
 Construye un proyecto Kotlin Compose como el siguiente:
+
 ![Sumar con RadioButton](img/02_1_sumarConRadio.png)
 
 

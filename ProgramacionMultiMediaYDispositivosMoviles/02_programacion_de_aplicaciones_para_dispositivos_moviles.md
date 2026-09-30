@@ -897,7 +897,7 @@ Construye un proyecto Kotlin Compose como el siguiente:
 ## Ejercicio 3
 Construye un proyecto Kotlin Compose como el siguiente:
 
-![Suma-Resta con CheckBox](img/02_2_sumcarconCheckBox.png)
+![Suma-Resta con CheckBox](img/02_2_sumarconCheckBox.png)
 
 ## Ejercicio 4
 Construye un proyecto Kotlin Compose como el siguiente:

@@ -788,7 +788,7 @@ Button(
 }
 ```
 
-## Reto
+## Ejercicio 1
 Solicitar un nombre y una edad mediante un TextField y mostrar: "Hola [nombre], tienes [edad] años por tanto eres mayor/menor de edad" usando un Toast.
 
 # 6. Splash Screen
@@ -888,6 +888,30 @@ LazyColumn necesita:
 
 - Una lista.
 - Un composable.
+
+### Ejercicio 2
+Construye un proyecto Kotlin Compose como el siguiente:
+![Sumar con RadioButton](img/02_1_sumarConRadio.png)
+
+
+
+
+### Ejercicio 3
+
+
+
+
+### Ejercicio 4
+
+
+
+
+### Ejercicio 5
+
+
+
+### Ejercicio 6
+
 
 ### Ejercicio
     a) Mostrar una lista de nombres de alumnos usando LazyColumn.

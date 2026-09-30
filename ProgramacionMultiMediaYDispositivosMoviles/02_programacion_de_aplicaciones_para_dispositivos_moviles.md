@@ -915,16 +915,10 @@ Construye un proyecto Kotlin Compose como el siguiente:
 ![Verificar User-Pass](img/02_5_verificacionUserNamePass.png)
 
 ## Ejercicio 7
-    a) Mostrar una lista de nombres de alumnos usando LazyColumn.
-    b) Mostrar una Card para cada alumno.
+- Mostrar una lista de nombres de alumnos usando LazyColumn.
+- Mostrar una Card para cada alumno.
 
 ## Ejercicio 8
-Crear un listado de películas mediante LazyColumn mostrando:
-    - Título.
-    - Año.
-    - Imagen.
-
-## Proyecto de bloque
 Aplicación "Catálogo de Videojuegos"
 Crear un catálogo de videojuegos usando: Card() LazyColumn() Image() Text()
 Requisitos:

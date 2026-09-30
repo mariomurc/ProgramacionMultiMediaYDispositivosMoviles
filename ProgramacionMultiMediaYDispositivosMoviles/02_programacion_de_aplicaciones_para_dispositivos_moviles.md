@@ -907,19 +907,18 @@ Construye un proyecto Kotlin Compose como el siguiente:
 ## Ejercicio 5
 Construye un proyecto Kotlin Compose como el siguiente:
 
-![Selección](img/02_4_selección.png)
+![Selección](img/02_4_ListaSeleccion.png)
 
 ## Ejercicio 6
 Construye un proyecto Kotlin Compose como el siguiente:
 
 ![Verificar User-Pass](img/02_5_verificacionUserNamePass.png)
 
-
-## Ejercicio
+## Ejercicio 7
     a) Mostrar una lista de nombres de alumnos usando LazyColumn.
     b) Mostrar una Card para cada alumno.
 
-## Ejercicio
+## Ejercicio 8
 Crear un listado de películas mediante LazyColumn mostrando:
     - Título.
     - Año.

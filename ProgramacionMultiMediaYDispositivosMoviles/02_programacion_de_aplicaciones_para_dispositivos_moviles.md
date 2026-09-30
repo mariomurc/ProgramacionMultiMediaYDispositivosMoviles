@@ -733,11 +733,11 @@ Así no mezclamos la función real del componente con la utilizada para visualiz
 ### 2. Utilizar nombres descriptivos
 Si tenemos varias previews evitaremos nombres como:
 
-    Plain Text, Preview1, Preview2 o Preview3
+    Plain Text, Preview1 o Preview3
 
 Es preferible utilizar:
 
-    Plain Text, ProductoDisponiblePreview, ProductoAgotadoPreview o ProductoNombreLargoPreview
+    ProductoDisponiblePreview, ProductoAgotadoPreview o ProductoNombreLargoPreview
 
 De esta manera sabemos inmediatamente qué situación estamos comprobando.
 

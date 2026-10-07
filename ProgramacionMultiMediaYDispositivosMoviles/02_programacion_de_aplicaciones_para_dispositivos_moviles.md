@@ -493,7 +493,182 @@ fun Contador() {
 
 Para que el código anterior funcione, es necesario añadir los dos import `getValue` y `setValue`
 
-# 4.3. Vista previa de componentes con @Preview
+# 5. La clase Toast
+La clase Toast permite mostrar mensajes breves en pantalla.
+
+Un Toast:
+- No bloquea la aplicación.
+- No requiere interacción del usuario.
+- Desaparece automáticamente tras unos segundos.
+
+Se utiliza habitualmente para:
+- Confirmar acciones.
+- Mostrar errores sencillos.
+- Informar al usuario de que una operación se ha completado.
+
+Ejemplo:
+
+```kotlin
+Toast.makeText(this, "Operación realizada", Toast.LENGTH_SHORT ).show()
+```
+
+## Toast en Jetpack Compose
+Cuando trabajamos con Compose necesitamos obtener el contexto de la aplicación:
+
+```kotlin
+val context = LocalContext.current
+```
+Ejemplo:
+```kotlin
+Button(
+    onClick = { Toast.makeText(context, "Hola DAM", Toast.LENGTH_SHORT).show() }
+){
+    Text("Mostrar mensaje")
+}
+```
+
+## Ejercicio 1
+Solicitar un nombre y una edad mediante un TextField y mostrar: "Hola [nombre], tienes [edad] años por tanto eres mayor/menor de edad" usando un Toast.
+
+# 6. Splash Screen
+La Splash Screen es la primera pantalla que aparece al arrancar una aplicación. Normalmente incluye:
+- Logotipo.
+- Nombre de la aplicación.
+- Color corporativo.
+
+Su principal objetivo es mejorar la experiencia inicial del usuario.
+
+## Splash Screen moderna
+Las versiones actuales de Android incorporan soporte nativo. 
+La configuración suele realizarse mediante:
+- themes.xml
+- AndroidManifest.xml
+
+La Activity principal continúa funcionando igual independientemente de si usamos XML o Compose.
+
+# 7. Evolución de las listas en Android
+Una de las formas que tiene Android para mostrar colecciones de datos es el uso de las estructuras:
+
+- ListView (XML)
+- RecyclerView (XML)
+- LazyColumn. (Compose)
+
+## 7.1 ListView y ArrayAdapter
+### Estado actual
+LEGACY
+
+Es importante conocerlo porque aparecen en aplicaciones antiguas. Sin embargo, actualmente apenas se utiliza en proyectos nuevos.
+
+### ¿Qué es un ArrayAdapter?
+Un adaptador actúa como puente entre:
+- Los datos.
+- El componente visual.
+
+Ejemplo:
+
+```kotlin
+val ciudades = arrayOf( "Madrid", "Toledo", "Sevilla" )
+val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, ciudades )
+```
+
+## 7.2 RecyclerView
+### Estado actual
+USADO
+
+RecyclerView sigue apareciendo en multitud de aplicaciones profesionales.
+
+### ¿Qué es RecyclerView?
+RecyclerView mejora el rendimiento reutilizando vistas. En lugar de crear continuamente nuevos elementos:
+
+- Los recicla.
+- Los reutiliza.
+- Consume menos memoria.
+
+### Elementos principales
+#### RecyclerView
+Zona donde se muestran los datos.
+
+#### Adapter
+Conecta datos e interfaz.
+
+#### ViewHolder
+Representa una fila individual.
+
+#### Dataset
+Colección de información.
+
+## 7.3 LazyColumn (Jetpack Compose)
+Es la alternativa moderna a RecyclerView y permite mostrar colecciones de datos utilizando Compose.
+
+Ejemplo:
+
+```kotlin
+LazyColumn {
+    items(alumnos) { alumno ->
+        Text(alumno.nombre)
+    }
+}
+```
+
+### Ventajas
+- Menos código.
+- No necesita Adapter.
+- No necesita ViewHolder.
+- Más fácil de mantener.
+
+### Equivalencia conceptual
+RecyclerView necesita:
+
+- Adapter
+- ViewHolder
+- Item XML
+
+LazyColumn necesita:
+
+- Una lista.
+- Un composable.
+
+## Ejercicio 2
+Construye un proyecto Kotlin Compose que permita elegir y realizar una de las dos operaciones:
+
+![Suma-Resta con RadioButton](img/02_1_sumarConRadio.png)
+
+## Ejercicio 3
+Construye un proyecto Kotlin Compose que permita elegir y realizar una o dos operaciones:
+
+![Suma-Resta con CheckBox](img/02_2_sumarconCheckBox.png)
+
+## Ejercicio 4
+Construye un proyecto Kotlin Compose que permita realizar una de las operaciones:
+
+![Operar con Desplegable](img/02_3_operarConDesplegable.png)
+
+## Ejercicio 5
+Construye un proyecto Kotlin Compose que permita seleccionar un PAIS de la lista y muestre la población actual en alguna parte de la interfaz [con una lista de 4-5 paises es suficiente]:
+
+![Selección](img/02_4_ListaSeleccion.png)
+
+## Ejercicio 6
+Construye un proyecto Kotlin Compose que al pulsar el botón verifique que los dos campos tienen algún dato y en este caso, se mostrará el número de caracteres de la clave en alguna parte de la pantalla. En caso contrario se deberá notificar el error. ¿Será posible mostrar los caracteres de la clave en formato ******** o similar?
+
+![Verificar User-Pass](img/02_5_verificacionUserNamePass.png)
+
+## Ejercicio 7
+- Mostrar una lista de nombres de alumnos usando LazyColumn.
+- Mostrar una Card para cada alumno.
+
+## Ejercicio 8
+Aplicación "Catálogo de Videojuegos"
+Crear un catálogo de videojuegos usando: Card() LazyColumn() Image() Text()
+Requisitos:
+
+    - Lista de videojuegos.
+    - Imagen.
+    - Título.
+    - Género.
+    - Toast al pulsar un elemento.
+
+# 8. Vista previa de componentes con @Preview
 Cuando estamos creando una interfaz con Jetpack Compose, es habitual realizar pequeños cambios continuamente: modificar un texto, cambiar un color, ajustar un tamaño, añadir un componente, etc.
 
 Podríamos ejecutar la aplicación en el emulador cada vez que hacemos uno de estos cambios, pero durante el diseño de la interfaz existe una alternativa mucho más cómoda: **las vistas previas de Jetpack Compose mediante la anotación@Preview**.
@@ -753,178 +928,3 @@ También conviene probar:
 - diferentes estados visuales.
 
 Eso nos ayudará a encontrar problemas antes. 
-
-# 5. La clase Toast
-La clase Toast permite mostrar mensajes breves en pantalla.
-
-Un Toast:
-- No bloquea la aplicación.
-- No requiere interacción del usuario.
-- Desaparece automáticamente tras unos segundos.
-
-Se utiliza habitualmente para:
-- Confirmar acciones.
-- Mostrar errores sencillos.
-- Informar al usuario de que una operación se ha completado.
-
-Ejemplo:
-
-```kotlin
-Toast.makeText(this, "Operación realizada", Toast.LENGTH_SHORT ).show()
-```
-
-## Toast en Jetpack Compose
-Cuando trabajamos con Compose necesitamos obtener el contexto de la aplicación:
-
-```kotlin
-val context = LocalContext.current
-```
-Ejemplo:
-```kotlin
-Button(
-    onClick = { Toast.makeText(context, "Hola DAM", Toast.LENGTH_SHORT).show() }
-){
-    Text("Mostrar mensaje")
-}
-```
-
-## Ejercicio 1
-Solicitar un nombre y una edad mediante un TextField y mostrar: "Hola [nombre], tienes [edad] años por tanto eres mayor/menor de edad" usando un Toast.
-
-# 6. Splash Screen
-La Splash Screen es la primera pantalla que aparece al arrancar una aplicación. Normalmente incluye:
-- Logotipo.
-- Nombre de la aplicación.
-- Color corporativo.
-
-Su principal objetivo es mejorar la experiencia inicial del usuario.
-
-## Splash Screen moderna
-Las versiones actuales de Android incorporan soporte nativo. 
-La configuración suele realizarse mediante:
-- themes.xml
-- AndroidManifest.xml
-
-La Activity principal continúa funcionando igual independientemente de si usamos XML o Compose.
-
-# 7. Evolución de las listas en Android
-Una de las formas que tiene Android para mostrar colecciones de datos es el uso de las estructuras:
-
-- ListView (XML)
-- RecyclerView (XML)
-- LazyColumn. (Compose)
-
-## 7.1 ListView y ArrayAdapter
-### Estado actual
-LEGACY
-
-Es importante conocerlo porque aparecen en aplicaciones antiguas. Sin embargo, actualmente apenas se utiliza en proyectos nuevos.
-
-### ¿Qué es un ArrayAdapter?
-Un adaptador actúa como puente entre:
-- Los datos.
-- El componente visual.
-
-Ejemplo:
-
-```kotlin
-val ciudades = arrayOf( "Madrid", "Toledo", "Sevilla" )
-val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, ciudades )
-```
-
-## 7.2 RecyclerView
-### Estado actual
-USADO
-
-RecyclerView sigue apareciendo en multitud de aplicaciones profesionales.
-
-### ¿Qué es RecyclerView?
-RecyclerView mejora el rendimiento reutilizando vistas. En lugar de crear continuamente nuevos elementos:
-
-- Los recicla.
-- Los reutiliza.
-- Consume menos memoria.
-
-### Elementos principales
-#### RecyclerView
-Zona donde se muestran los datos.
-
-#### Adapter
-Conecta datos e interfaz.
-
-#### ViewHolder
-Representa una fila individual.
-
-#### Dataset
-Colección de información.
-
-## 7.3 LazyColumn (Jetpack Compose)
-Es la alternativa moderna a RecyclerView y permite mostrar colecciones de datos utilizando Compose.
-
-Ejemplo:
-
-```kotlin
-LazyColumn {
-    items(alumnos) { alumno ->
-        Text(alumno.nombre)
-    }
-}
-```
-
-### Ventajas
-- Menos código.
-- No necesita Adapter.
-- No necesita ViewHolder.
-- Más fácil de mantener.
-
-### Equivalencia conceptual
-RecyclerView necesita:
-
-- Adapter
-- ViewHolder
-- Item XML
-
-LazyColumn necesita:
-
-- Una lista.
-- Un composable.
-
-## Ejercicio 2
-Construye un proyecto Kotlin Compose que permita elegir y realizar una de las dos operaciones:
-
-![Suma-Resta con RadioButton](img/02_1_sumarConRadio.png)
-
-## Ejercicio 3
-Construye un proyecto Kotlin Compose que permita elegir y realizar una o dos operaciones:
-
-![Suma-Resta con CheckBox](img/02_2_sumarconCheckBox.png)
-
-## Ejercicio 4
-Construye un proyecto Kotlin Compose que permita realizar una de las operaciones:
-
-![Operar con Desplegable](img/02_3_operarConDesplegable.png)
-
-## Ejercicio 5
-Construye un proyecto Kotlin Compose que permita seleccionar un PAIS de la lista y muestre la población actual en alguna parte de la interfaz [con una lista de 4-5 paises es suficiente]:
-
-![Selección](img/02_4_ListaSeleccion.png)
-
-## Ejercicio 6
-Construye un proyecto Kotlin Compose que al pulsar el botón verifique que los dos campos tienen algún dato y en este caso, se mostrará el número de caracteres de la clave en alguna parte de la pantalla. En caso contrario se deberá notificar el error. ¿Será posible mostrar los caracteres de la clave en formato ******** o similar?
-
-![Verificar User-Pass](img/02_5_verificacionUserNamePass.png)
-
-## Ejercicio 7
-- Mostrar una lista de nombres de alumnos usando LazyColumn.
-- Mostrar una Card para cada alumno.
-
-## Ejercicio 8
-Aplicación "Catálogo de Videojuegos"
-Crear un catálogo de videojuegos usando: Card() LazyColumn() Image() Text()
-Requisitos:
-
-    - Lista de videojuegos.
-    - Imagen.
-    - Título.
-    - Género.
-    - Toast al pulsar un elemento.

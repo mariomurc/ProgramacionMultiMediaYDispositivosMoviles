@@ -370,9 +370,9 @@ Button(
 
 El parámetro onClick contiene la lógica que se ejecutará al pulsar el botón.
 
-## Enlaces a Ejemplos: 
-    00_Contador
-    01_SumaDosNumeros (Version XML y Composable)
+## Enlaces a Ejemplos 
+   [00_Contador](https://cloud.educa.madrid.org/s/Ddw6WRQNgf8KLEJ)
+   [01_SumaDosNumeros (Version XML y Composable)](https://cloud.educa.madrid.org/s/Ddw6WRQNgf8KLEJ)
 
 # 4.2. Estado en Compose
 # Administrar el estado

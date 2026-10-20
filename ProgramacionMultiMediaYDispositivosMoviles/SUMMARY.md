@@ -7,7 +7,7 @@
   * [Ciclo de Vida de una Aplicación Android](ciclo-de-vida-de-una-aplicacion-android.md)
   * [Componentes Visuales](componentes-visuales.md)
   * [Primera Aplicación Funcional](primera-aplicacion-funcional.md)
-    * [Estados](administrar_el_estado.md)
+    * [Estados](estados.md)
   * [La Clase Toast](clase_toast.md)
   * [Splash Screen](splash.md)
   * [Evolución de las listas en Android](evolucion_listas.md)

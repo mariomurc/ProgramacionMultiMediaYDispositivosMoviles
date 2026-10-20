@@ -10,7 +10,7 @@
     * [Estados](administrar_el_estado.md)
   * [La Clase Toast](clase_toast.md)
   * [Splash Screen](splash.md)
-  * [Evolución de las listas en Android)(evolucion_listas.md)
+  * [Evolución de las listas en Android](evolucion_listas.md)
   * [Ejercicios 2 - 8](02_x_ejercicios.md)
   * [Vista Previa de Componentes](vista_prev_componentes.md)
   * [Modificadores](modificadores.md)

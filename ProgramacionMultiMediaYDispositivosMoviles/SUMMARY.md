@@ -9,7 +9,7 @@
   * [Primera Aplicación Funcional](primera-aplicacion-funcional.md)
     * [Estados](estados.md)
   * [La Clase Toast](la_clase_toast.md)
-  * [Splash Screen](splash_screen.md)
+  * [Splash Screen](splash-screen.md)
   * [Evolución de las listas en Android](evolucion-de-las-listas-en-android.md)
   * [Ejercicios 2 - 8](02_x_ejercicios.md)
   * [Vista Previa de Componentes](vista_prev_componentes.md)

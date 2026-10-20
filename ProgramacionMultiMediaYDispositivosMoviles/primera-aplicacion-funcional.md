@@ -1,4 +1,4 @@
-# 4. Primera aplicación funcional
+# Primera aplicación funcional
 
 Hasta ahora usando XML podríamos interactuar pulsando un botón con este código:
 
@@ -23,7 +23,7 @@ La anotación:
 
 @Composable indica que la función dibuja elementos visuales.
 
-# 4.1. Eventos en Compose
+# Eventos en Compose
 ```kotlin
 Button(
     onClick = {

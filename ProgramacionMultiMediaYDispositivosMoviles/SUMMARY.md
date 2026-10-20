@@ -12,6 +12,6 @@
   * [Splash Screen](splash-screen.md)
   * [Evolución de las listas en Android](evolucion-de-las-listas-en-android.md)
   * [Ejercicios 2 - 8](02_x_ejercicios.md)
-  * [Vista Previa de Componentes](vista_prev_componentes.md)
+  * [Vista Previa de Componentes](vista-previa-de-componentes.md)
   * [Modificadores](modificadores.md)
   * [Arquitectura CLEAN](arquitectura_clean.md)

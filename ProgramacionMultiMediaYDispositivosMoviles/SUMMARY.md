@@ -13,6 +13,7 @@
   * [Evolución de las listas en Android](evolucion-de-las-listas-en-android.md)
   * [Ejercicios 2 - 8](02_x_ejercicios.md)
   * [Vista Previa de Componentes](vista-previa-de-componentes.md)
+  * [Recursos de Componentes en Compose](recursos-de-componentes-en-compose.md)
   * [Modificadores](modificadores.md)
   * [Arquitectura CLEAN](arquitectura_clean.md)
   * [ViewModel](viewmodel/README.md)

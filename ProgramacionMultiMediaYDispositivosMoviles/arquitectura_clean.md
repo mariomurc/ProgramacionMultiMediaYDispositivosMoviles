@@ -1,4 +1,5 @@
 # Arquitectura CLEAN
+aaaaaaaaaaaaaaaaaaaaaaaa
 
 La arquitectura **CLEAN** es un enfoque estructurado y modular para diseñar aplicaciones, que fomenta la separación de responsabilidades y hace que el código sea más mantenible, testeable y escalable. Al aplicarla en **Jetpack Compose**, se adapta el patrón a las particularidades del framework, teniendo en cuenta que Jetpack Compose es declarativo.
 

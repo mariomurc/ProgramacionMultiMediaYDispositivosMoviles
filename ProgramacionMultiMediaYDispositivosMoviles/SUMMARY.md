@@ -14,6 +14,7 @@
   * [Ejercicios 2 - 8](02_x_ejercicios.md)
   * [Vista Previa de Componentes](vista-previa-de-componentes.md)
   * [Recursos y Componentes Básicos Compose](recursos-de-componentes-en-compose.md)
+    * [Cargar imágenes en un Proyecto](cargar-imagenes-en-un-proyecto.md) 
   * [Ejercicio 9 (PPT)](ejercicio-9.md)
   * [Modificadores](modificadores.md)
   * [Arquitectura CLEAN](arquitectura_clean.md)

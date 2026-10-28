@@ -58,8 +58,8 @@ com.example.myapp
 Un `ViewModel` se utiliza para manejar algún estado.  Todo `ViewModel` debe declarar las siguientes partes:
 
 1. **Variable de estado mutable** (`MutableStateFlow`): define el estado que gestiona el `ViewModel`. Este estado es mutable y debe declararse privado para que los `@Composable` no puedan acceder al mismo directamente.
-2. **Variable de estado inmutable** (`StateFlow`): Es una derivación inmutable del estado anterior, este es público ya que&#x20;
-3. Funciones de acciones del estado
+2. **Variable de estado inmutable** (`StateFlow`): es una versión de solo lectura del estado anterior. Se expone públicamente para que los @Composable puedan observar los cambios de estado sin tener capacidad para modificarlos. De esta forma se garantiza que el estado solo pueda alterarse desde el propio ViewModel, siguiendo el principio de encapsulación.
+3. **Funciones de actualización o acciones del estado**: son las funciones encargadas de modificar el estado interno del ViewModel. Estas funciones representan las acciones que puede realizar el usuario o la propia aplicación (por ejemplo, actualizar un texto, cargar datos, marcar una tarea como completada o reiniciar el estado). Todas las modificaciones sobre el MutableStateFlow deben realizarse a través de estas funciones.
 
 El `ViewModel` de cada ventana se declara como parámetro de su función `@Composable` y se instancia por defecto usando el método `viewModel()`.
 

@@ -66,28 +66,28 @@ El `ViewModel` de cada ventana se declara como parámetro de su función `@Compo
 ## Conversión Ejemplo básico de Contador a MVVM
 
 En MVVM (Model-View-ViewModel) el proceso sería:
-    * View (Jetpack Compose): solo muestra datos y captura eventos.
-    * ViewModel: contiene el estado y la lógica de negocio.
-    * Model: los datos (en este caso ni siquiera necesitas uno porque solo hay un contador).
+1. View (Jetpack Compose): solo muestra datos y captura eventos.
+2. ViewModel: contiene el estado y la lógica de negocio.
+3. Model: los datos (en este caso ni siquiera necesitas uno porque solo hay un contador).
 
 [LINK AL PROYECTO 03_CONTADOR_MVVM](https://cloud.educa.madrid.org/s/Ddw6WRQNgf8KLEJ)
 
 ### Resultado visual de la arquitectura (ANTES)
-
+```
 Composable
 │
 ├── Estado (contador)
 ├── Lógica (contador++)
 └── Interfaz de usuario
-
+```
 Problemas
-    * La UI conoce y gestiona el estado.
-    * La lógica está mezclada con la presentación.
-    * Es más difícil de probar.
-    * Si el Composable desaparece de memoria, el estado puede perderse.
+1. La UI conoce y gestiona el estado.
+2. La lógica está mezclada con la presentación.
+3. Es más difícil de probar.
+4. Si el Composable desaparece de memoria, el estado puede perderse.
 
 ### Resultado visual de la arquitectura (DESPUÉS)
-
+```
 View (Compose)
 │
 ├── Muestra contador
@@ -98,12 +98,14 @@ ViewModel
 │
 ├── contador
 └── incrementar()
-    
+```    
 ### Regla práctica para Compose + MVVM
 Cuando tengas código dentro de un @Composable, pregúntate:
-    1) ¿Solo pinta información? → Se queda en la View.
-    2) ¿Modifica datos o toma decisiones? → Va al ViewModel.
-    3) ¿Accede a base de datos, API REST o Room? → Repositorio/Model.
+    1. ¿Solo pinta información? → Se queda en la View.
+    2. ¿Modifica datos o toma decisiones? → Va al ViewModel.
+    3. ¿Accede a base de datos, API REST o Room? → Repositorio/Model.
+
+
 
 ## Ejemplo de Login Screen
 

@@ -70,7 +70,7 @@ En MVVM (Model-View-ViewModel) el proceso sería:
 2. ViewModel: contiene el estado y la lógica de negocio.
 3. Model: los datos (en este caso ni siquiera necesitas uno porque solo hay un contador).
 
-[LINK AL PROYECTO 03_CONTADOR_MVVM](https://cloud.educa.madrid.org/s/Ddw6WRQNgf8KLEJ)
+[LINK AL PROYECTO 03_CONTADOR_MVVM]()
 
 ### Resultado visual de la arquitectura (ANTES)
 ```

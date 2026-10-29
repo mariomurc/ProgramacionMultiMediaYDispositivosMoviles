@@ -63,7 +63,7 @@ Un `ViewModel` se utiliza para manejar algún estado.  Todo `ViewModel` debe dec
 
 El `ViewModel` de cada ventana se declara como parámetro de su función `@Composable` y se instancia por defecto usando el método `viewModel()`.
 
-## Conversión Ejemplo básico de Contador a MVVM
+## Conversión Ejemplo Básico de Contador a MVVM
 
 En MVVM (Model-View-ViewModel) el proceso sería:
 1. View (Jetpack Compose): solo muestra datos y captura eventos.
@@ -101,9 +101,9 @@ ViewModel
 ```    
 ### Regla práctica para Compose + MVVM
 Cuando tengas código dentro de un @Composable, pregúntate:
-    1. ¿Solo pinta información? → Se queda en la View.
-    2. ¿Modifica datos o toma decisiones? → Va al ViewModel.
-    3. ¿Accede a base de datos, API REST o Room? → Repositorio/Model.
+1. ¿Solo pinta información? → Se queda en la View.
+2. ¿Modifica datos o toma decisiones? → Va al ViewModel.
+3. ¿Accede a base de datos, API REST o Room? → Repositorio/Model.
 
 
 

@@ -123,8 +123,8 @@ Fíjate en la evolución:
 
 | Nivel | Código | Explicación |
 |--------|--------|-------------|
-| **Nivel 1** | `var usuario by remember { mutableStateOf("") }` | El estado vive dentro del Composable. Si la pantalla desaparece, el estado también. |
-| **Nivel 2** | `var usuario by mutableStateOf("")` | El estado vive dentro del ViewModel. Sobrevive a recomposiciones y separa UI de lógica. |
+| **1** | `var usuario by remember { mutableStateOf("") }` | El estado vive dentro del Composable. Si la pantalla desaparece, el estado también. |
+| **2** | `var usuario by mutableStateOf("")` | El estado vive dentro del ViewModel. Sobrevive a recomposiciones y separa UI de lógica. |
 
 
 ## COMO PRÁCTICA PARA SEGUIR ENTENDIENDO EL MVVM, ¿PODRÍAS RESOLVER LOS EJERCICIOS DEL 2, 3, 5, 7 Y 8 USANDO MVVM?

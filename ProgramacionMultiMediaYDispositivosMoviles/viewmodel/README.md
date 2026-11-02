@@ -115,4 +115,5 @@ Para entender el MVVM, la transición podría darse en varios pasos:
 
 1. 03_LoginScreen( ): Solución al ejercicio sin usar MVVM
 2. 03_LoginScreen_MVVM(): Solución al ejercicio usando MVVM de forma sencilla y didáctica para entender que cambia entre el planteamiento anterior y este
-3. 03_LoginScreen_MVVM_Mejorado(): Solución al ejercicio usando MVVM de forma "ortodoxa" como se usaría en un proyecto real
+CONTINÚA ....
+<!-- 4. 03_LoginScreen_MVVM_Mejorado(): Solución al ejercicio usando MVVM de forma "ortodoxa" como se usaría en un proyecto real -->

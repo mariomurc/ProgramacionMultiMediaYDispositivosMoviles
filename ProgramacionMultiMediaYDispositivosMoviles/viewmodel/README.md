@@ -114,6 +114,7 @@ Otro ejemplo, podríamos modificar la ventana de Login del Ejercicio 6 para que 
 Para entender el MVVM, la transición podría darse en varios pasos:
 
 [1. 03_LoginScreen](https://cloud.educa.madrid.org/s/Ddw6WRQNgf8KLEJ): Solución al ejercicio sin usar MVVM
+
 [2. 03_LoginScreen_MVVM](https://cloud.educa.madrid.org/s/Ddw6WRQNgf8KLEJ): Solución al ejercicio usando MVVM de forma sencilla y didáctica para entender que cambia entre el planteamiento anterior y este
-CONTINÚA ....
+
 <!-- 4. 03_LoginScreen_MVVM_Mejorado(): Solución al ejercicio usando MVVM de forma "ortodoxa" como se usaría en un proyecto real -->

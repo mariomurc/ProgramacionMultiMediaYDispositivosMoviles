@@ -52,9 +52,7 @@ Para entender el MVVM, la transición podría darse en varios pasos:
 
 [2. 03_LoginScreen_MVVM](https://cloud.educa.madrid.org/s/Ddw6WRQNgf8KLEJ): Solución al ejercicio usando MVVM de forma sencilla y didáctica para entender que cambia entre el planteamiento anterior y este
 
-En esta transición entre el ejemplo 1 y el 2 es importante entender lo siguiente:
-
-Fíjate en la evolución:
+En esta transición entre el ejemplo 1 y el 2 es importante entender la siguiente evolución:
 
 | Nivel | Código | Explicación |
 |--------|--------|-------------|

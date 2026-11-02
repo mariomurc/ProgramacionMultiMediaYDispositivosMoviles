@@ -117,4 +117,6 @@ Para entender el MVVM, la transición podría darse en varios pasos:
 
 [2. 03_LoginScreen_MVVM](https://cloud.educa.madrid.org/s/Ddw6WRQNgf8KLEJ): Solución al ejercicio usando MVVM de forma sencilla y didáctica para entender que cambia entre el planteamiento anterior y este
 
+## COMO PRÁCTICA PARA SEGUIR ENTENDIENDO ESTO DEL MVVM, ¿PODRÍAS RESOLVER LOS EJERCICIOS DEL 2, 3, 5, 7 Y 8 USANDO MVVM?
+
 <!-- 4. 03_LoginScreen_MVVM_Mejorado(): Solución al ejercicio usando MVVM de forma "ortodoxa" como se usaría en un proyecto real -->

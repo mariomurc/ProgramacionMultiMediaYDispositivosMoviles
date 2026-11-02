@@ -117,6 +117,16 @@ Para entender el MVVM, la transición podría darse en varios pasos:
 
 [2. 03_LoginScreen_MVVM](https://cloud.educa.madrid.org/s/Ddw6WRQNgf8KLEJ): Solución al ejercicio usando MVVM de forma sencilla y didáctica para entender que cambia entre el planteamiento anterior y este
 
-## COMO PRÁCTICA PARA SEGUIR ENTENDIENDO ESTO DEL MVVM, ¿PODRÍAS RESOLVER LOS EJERCICIOS DEL 2, 3, 5, 7 Y 8 USANDO MVVM?
+En esta transición entre el ejemplo 1 y el 2 es importante entender lo siguiente:
+
+Fíjate en la evolución:
+
+| Nivel | Código | Explicación |
+|--------|--------|-------------|
+| **Nivel 1** | `var usuario by remember { mutableStateOf("") }` | El estado vive dentro del Composable. Si la pantalla desaparece, el estado también. |
+| **Nivel 2** | `var usuario by mutableStateOf("")` | El estado vive dentro del ViewModel. Sobrevive a recomposiciones y separa UI de lógica. |
+
+
+## COMO PRÁCTICA PARA SEGUIR ENTENDIENDO EL MVVM, ¿PODRÍAS RESOLVER LOS EJERCICIOS DEL 2, 3, 5, 7 Y 8 USANDO MVVM?
 
 <!-- 4. 03_LoginScreen_MVVM_Mejorado(): Solución al ejercicio usando MVVM de forma "ortodoxa" como se usaría en un proyecto real -->

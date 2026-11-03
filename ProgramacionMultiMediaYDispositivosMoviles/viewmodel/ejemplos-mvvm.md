@@ -91,7 +91,7 @@ Cuando el estado cambia mediante:
 Jetpack Compose detecta el cambio y recompone automáticamente la UI.
 
 ## El flujo recomendado en MVVM
-
+```
 View
  │
  ▼
@@ -107,3 +107,4 @@ StateFlow actualiza estado
 Compose observa cambios
  ↓
 UI actualizada
+```

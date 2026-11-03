@@ -62,9 +62,9 @@ En esta transición entre el ejemplo 1 y el 2 es importante entender la siguient
 | **2** | `var usuario by mutableStateOf("")` | El estado vive dentro del ViewModel. Sobrevive a recomposiciones y separa UI de lógica. |
 | **3** | `MutableStateFlow(UiState())` | El estado completo de la pantalla se representa mediante una única `data class`. El ViewModel es el único que puede modificarla y la UI la observa mediante `collectAsState()`. Facilita el mantenimiento, las pruebas y la integración con APIs, Room o Firebase. |
 
-#########################################################################################################################
+################################################################################################################
 ### COMO PRÁCTICA PARA SEGUIR ENTENDIENDO EL MVVM, ¿PODRÍAS RESOLVER LOS EJERCICIOS DEL 2, 3, 5, 7 Y 8 USANDO MVVM?
-#########################################################################################################################
+################################################################################################################
 
 # StateFlow: Regla para Recordar
 

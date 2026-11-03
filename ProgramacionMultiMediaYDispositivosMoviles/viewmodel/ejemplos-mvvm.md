@@ -1,4 +1,4 @@
-# Conversión Ejemplo Básico de Contador a MVVM
+## Conversión Ejemplo Básico de Contador a MVVM
 
 En MVVM (Model-View-ViewModel) el proceso sería:
 1. View (Jetpack Compose): solo muestra datos y captura eventos.

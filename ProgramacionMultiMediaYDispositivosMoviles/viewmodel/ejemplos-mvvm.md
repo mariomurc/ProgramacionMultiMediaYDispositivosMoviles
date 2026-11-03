@@ -106,6 +106,7 @@ StateFlow actualiza estado
  │
  ▼
 Compose observa cambios
- ↓
+ │
+ ▼
 UI actualizada
 ```

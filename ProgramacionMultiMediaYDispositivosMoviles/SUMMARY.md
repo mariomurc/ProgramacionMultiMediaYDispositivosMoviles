@@ -19,5 +19,5 @@
   * [Modificadores](02_programacion_de_aplicaciones_para_dispositivos_moviles/modificadores.md)
   * [Arquitectura CLEAN](02_programacion_de_aplicaciones_para_dispositivos_moviles/arquitectura_clean.md)
   * [ViewModel](viewmodel/README.md)
-    * [Ejemplos MVVM](viewmodel/ejemplos-mvvm.md)
+    * [Ejemplos MVVM y StateFlow](viewmodel/ejemplos-mvvm.md)
     * [MutableState vs ViewModel](viewmodel/mutablestate-vs-viewmodel.md)

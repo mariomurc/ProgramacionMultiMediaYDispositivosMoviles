@@ -62,4 +62,3 @@ Un `ViewModel` se utiliza para manejar algún estado.  Todo `ViewModel` debe dec
 3. **Funciones de actualización o acciones del estado**: son las funciones encargadas de modificar el estado interno del ViewModel. Estas funciones representan las acciones que puede realizar el usuario o la propia aplicación (por ejemplo, actualizar un texto, cargar datos, marcar una tarea como completada o reiniciar el estado). Todas las modificaciones sobre el MutableStateFlow deben realizarse a través de estas funciones.
 
 El `ViewModel` de cada ventana se declara como parámetro de su función `@Composable` y se instancia por defecto usando el método `viewModel()`.
-

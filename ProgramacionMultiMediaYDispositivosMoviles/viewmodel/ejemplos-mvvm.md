@@ -48,10 +48,12 @@ Otro ejemplo, podríamos modificar la ventana de Login del Ejercicio 6 para que 
 
 Para entender el MVVM, la transición podría darse en varios pasos:
 
-[1. 03_LoginScreen](https://cloud.educa.madrid.org/s/Ddw6WRQNgf8KLEJ): Solución al ejercicio sin usar MVVM
+1. [03_LoginScreen](https://cloud.educa.madrid.org/s/Ddw6WRQNgf8KLEJ): Solución al ejercicio sin usar MVVM
 
-[2. 03_LoginScreen_MVVM](https://cloud.educa.madrid.org/s/Ddw6WRQNgf8KLEJ): Solución al ejercicio usando MVVM de forma sencilla y didáctica para entender que cambia entre el planteamiento anterior y este
+2. [03_LoginScreen_MVVM](https://cloud.educa.madrid.org/s/Ddw6WRQNgf8KLEJ): Solución al ejercicio usando MVVM de forma sencilla y didáctica para entender que cambia entre el planteamiento anterior y este
 
+3. [03_LoginScreen_MVVM_Mejorado](https://cloud.educa.madrid.org/s/Ddw6WRQNgf8KLEJ): Solución al ejercicio usando MVVM de forma "ortodoxa" como se resolvería en un proyecto real(teniendo en cuenta la simplicidad del problema)
+   
 En esta transición entre el ejemplo 1 y el 2 es importante entender la siguiente evolución:
 
 | Nivel | Código | Explicación |
@@ -62,4 +64,42 @@ En esta transición entre el ejemplo 1 y el 2 es importante entender la siguient
 
 ## COMO PRÁCTICA PARA SEGUIR ENTENDIENDO EL MVVM, ¿PODRÍAS RESOLVER LOS EJERCICIOS DEL 2, 3, 5, 7 Y 8 USANDO MVVM?
 
-<!-- 4. 03_LoginScreen_MVVM_Mejorado(): Solución al ejercicio usando MVVM de forma "ortodoxa" como se usaría en un proyecto real -->
+
+# StateFlow: Regla para Recordar
+
+## Conceptos clave
+
+Cuando veas:
+
+```kotlin
+MutableStateFlow
+```
+Piensa: "Aquí guardo el estado de mi aplicación."
+
+Cuando veas:
+
+```kotlin
+collectAsState()
+```
+Piensa: "La pantalla está escuchando ese estado."
+
+Cuando el estado cambia mediante:
+
+```kotlin
+.value = ...
+```
+Jetpack Compose detecta el cambio y recompone automáticamente la UI.
+
+## El flujo recomendado en MVVM
+
+View
+ ↓
+Evento del usuario
+ ↓
+ViewModel
+ ↓
+StateFlow actualiza estado
+ ↓
+Compose observa cambios
+ ↓
+UI actualizada

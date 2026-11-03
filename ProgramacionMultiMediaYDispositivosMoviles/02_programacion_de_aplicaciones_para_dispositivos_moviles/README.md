@@ -1,0 +1,912 @@
+# Unidad 2. Programacion de Aplicaciones para Dispositivos Moviles
+
+**Módulo:** Programación Multimedia y Dispositivos Móviles\
+**Ciclo:** 2.º DAM\
+**Revisión y actualización:** septiembre de 2026
+
+## 1. Primera clase en un proyecto Android Studio
+
+Cuando creamos un proyecto Android vacío, Android Studio genera automáticamente una clase principal denominada **MainActivity**.
+
+```kotlin
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+    }
+}
+```
+
+En este código aparecen conceptos que ya conocemos de Kotlin:
+
+* Definición de clases.
+* Herencia.
+* Sobreescritura de métodos.
+* Llamadas a métodos de la superclase.
+
+### 1.1. Explicación básica
+
+#### Clase Principal
+
+```kotlin
+class MainActivity : AppCompatActivity()
+```
+
+Define una Activity, es decir, una pantalla de nuestra aplicación mediante la clase MainActivity, que hereda de AppCompatActivity. AppCompatActivity es una clase base proporcionada por Android para actividades (pantallas) que desean ser compatibles con versiones anteriores del sistema operativo. En este caso, la MainActivity será la actividad principal de la aplicación.
+
+#### Método onCreate()
+
+```kotlin
+override fun onCreate(savedInstanceState: Bundle?)
+```
+
+Es el primer método que se ejecuta cuando la Activity es creada. Esta línea sobrescribe (override) el método onCreate de la clase base AppCompatActivity. onCreate es el primer método que se llama cuando se crea la actividad, por lo que aquí se configuran los componentes de la interfaz de usuario y se inicializan las operaciones necesarias para la actividad.
+
+El parámetro savedInstanceState: Bundle? contiene datos sobre el estado anterior de la actividad, si es que fue destruida y creada nuevamente (por ejemplo, al rotar la pantalla).
+
+#### Llamada a la superclase
+
+```kotlin
+super.onCreate(savedInstanceState)
+```
+
+Esta línea llama al método onCreate de la clase base (AppCompatActivity) para asegurar que el ciclo de vida básico de la actividad se gestione correctamente antes de añadir más lógica personalizada.
+
+### 1.2. Creación de interfaces: XML vs Compose
+
+Tradicionalmente la interfaz se definía en un archivo XML:
+
+```kotlin
+setContentView(R.layout.activity_main)
+```
+
+Este método carga el diseño definido en:
+
+```
+res/layout/activity_main.xml
+```
+
+Históricamente, el desarrollo de interfaces en Android se ha realizado mediante archivos XML (Extensible Markup Language). En este enfoque, se definen las vistas y la jerarquía de la interfaz en archivos separados del código de la lógica de la aplicación (en archivos .xml dentro de la carpeta res/layout). Los componentes visuales como botones, textos, imágenes y listas se crean usando etiquetas XML que describen las propiedades visuales y su disposición.:
+
+#### Ejemplo tradicional
+
+XML
+
+```xml
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hola, Mundo!" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Presionar" />
+</LinearLayout>
+```
+
+Las principales características son:
+
+* Las vistas se describen mediante XML, pero la lógica de interacción se maneja en código Java o Kotlin.
+* Jerarquía de vistas: Las vistas (Views) se anidan en una estructura jerárquica, donde cada componente ocupa un espacio en memoria.
+* UI Imperativa: Aunque la estructura de la interfaz es declarativa (XML), su manipulación en tiempo de ejecución es más imperativa. Es decir, el desarrollador debe actualizar las vistas manualmente a través de código cuando cambien los datos.
+* Fragmentación del código: El diseño y la lógica se manejan en archivos separados (XML y código Java/Kotlin).
+
+Actualmente Google recomienda utilizar **Jetpack Compose**, un sistema moderno basado en Kotlin. Jetpack Compose es un moderno kit de herramientas declarativo de Android que permite crear interfaces de usuario completamente en código, sin necesidad de XML. Lanzado oficialmente por Google en 2020, Jetpack Compose está escrito en Kotlin y simplifica la creación de interfaces gracias a un enfoque declarativo, inspirado por frameworks como React o SwiftUI.
+
+En Compose la interfaz se genera mediante funciones:
+
+```kotlin
+setContent {
+    PantallaPrincipal()
+}
+@Composable
+fun PantallaPrincipal() {
+    Column {
+        Text(text = "Hola, Mundo!")
+        Button(onClick = { /* Acción al presionar */ }) {
+            Text(text = "Presionar")
+        }
+    }
+}
+```
+
+Las principales características son:
+
+* Declarativo completo: La interfaz se construye mediante código declarativo. Se describe el estado de la UI y Jetpack Compose se encarga de renderizar los cambios cuando el estado subyacente cambia.
+* UI Reactiva: La interfaz está vinculada al estado de los datos. Si el estado cambia, la UI se actualiza automáticamente, sin necesidad de manipular manualmente las vistas.
+* Menos fragmentación: Todo, desde el diseño de la UI hasta la lógica, puede estar en el mismo archivo, lo que facilita el manejo del código.
+* Optimización del rendimiento: Jetpack Compose utiliza menos jerarquías de vistas que el enfoque basado en XML, lo que puede mejorar el rendimiento en términos de memoria y procesamiento.
+* Compatibilidad con vistas heredadas: Aunque es un enfoque moderno, Compose es compatible con vistas tradicionales de Android, lo que permite mezclar ambas técnicas si es necesario.
+
+## 2. Ciclo de vida de una aplicación Android
+
+Toda Activity pasa por una serie de estados durante su existencia. El ciclo de vida es independiente de que utilicemos XML o Jetpack Compose.
+
+Las principales fases son:
+
+* onCreate()
+* onStart()
+* onResume()
+* onPause()
+* onStop()
+* onDestroy()
+
+![Ciclo de vida de una Activity](../.gitbook/assets/image1.png)
+
+### ¿Por qué es importante?
+
+Permite:
+
+* **Inicializar recursos.**
+
+Cuando la Activity se crea por primera vez solemos cargar los elementos necesarios para que la aplicación funcione.
+
+Por ejemplo: - Conectar con una base de datos. - Cargar una lista de alumnos. - Inicializar un RecyclerView. - Preparar una conexión a internet.
+
+* **Guardar estados.**
+
+Cuando el usuario gira el móvil o cambia temporalmente a otra aplicación, la Activity puede destruirse y volver a crearse. Si no guardamos información, los datos introducidos podrían perderse.
+
+Ejemplo: Un alumno está rellenando un formulario:
+
+```
+Nombre: Mario
+Curso: DAM2
+```
+
+Gira el dispositivo. Los datos desaparecen, sin guardar el estado:
+
+```
+Nombre:
+Curso: 
+```
+
+Ejemplo sencillo:
+
+```kotlin
+override fun onSaveInstanceState(outState: Bundle) {
+    super.onSaveInstanceState(outState)
+    outState.putString("nombre", txtNombre.text.toString()
+    )
+}
+```
+
+**Ejemplo real:**
+
+Un usuario está escribiendo una incidencia en una app de mantenimiento y recibe una llamada telefónica. Al volver a la aplicación quiere continuar exactamente donde estaba.
+
+* **Recuperar información.**
+
+No basta con guardar. También debemos recuperar esos datos cuando la Activity vuelva a crearse.
+
+Ejemplo:
+
+```kotlin
+override fun onCreate(savedInstanceState: Bundle?) {
+  super.onCreate(savedInstanceState)
+  val nombre = savedInstanceState?.getString("nombre")
+}
+```
+
+**Ejemplo real:**
+
+Un usuario está viendo: **Alumno nº 145** y gira el dispositivo. La aplicación debería seguir mostrando el mismo alumno y no volver al principio de la lista.
+
+* **Liberar memoria cuando la aplicación deja de utilizarse.**
+
+Los dispositivos móviles tienen memoria limitada. Cuando una Activity deja de utilizarse debemos liberar los recursos que ya no necesitamos.
+
+Ejemplos: - Cerrar conexiones con la base de datos. - Detener música. - Parar la cámara. - Cancelar peticiones de red.
+
+Ejemplo:
+
+```kotlin
+override fun onDestroy() {
+    super.onDestroy()
+    conexion.close()
+}
+```
+
+**Ejemplo real:** Imagina una aplicación de Spotify. Si el usuario cierra la Activity y la aplicación sigue consumiendo recursos innecesariamente: - gastará batería - consumirá memoria - ralentizará el dispositivo
+
+#### Transiciones de estados más habituales
+
+* **onCreate()** → **onStart()** → **onResume()** (la actividad está visible e interactiva)
+* Si el usuario cambia de pantalla o la actividad ya no está en primer plano: **onPause()** → **onStop()**
+* Si el usuario vuelve a la actividad, se llama nuevamente a **onRestart()** → **onStart()** → **onResume()**.
+* Finalmente, si la actividad se cierra o se destruye: **onDestroy()**.
+
+## 3. Componentes visuales: XML vs Jetpack Compose
+
+Las interfaces Android están formadas por componentes visuales.
+
+Tradicionalmente estos componentes se denominan **Views** y se agrupan dentro de **ViewGroups**.
+
+### Algunos ejemplos de Views
+
+```
+- TextView            - EditText
+- Button              - ImageView
+- CheckBox            - RadioButton
+```
+
+### Algunos ejemplos de ViewGroups
+
+```
+- LinearLayout
+- ConstraintLayout
+- FrameLayout
+```
+
+Todos los elementos visuales deberían encontrarse organizados dentro de algún contenedor.
+
+## 3.1. Equivalencias XML y Compose
+
+Jetpack Compose utiliza componentes equivalentes escritos directamente en Kotlin.
+
+| **XML**                                                                                                                      | **Compose**                                                                                             |
+| ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| \<TextView android:text="Hola"/>                                                                                             | <p>Text(<br>    text = "Hola"<br>)</p>                                                                  |
+| \<EditText android:hint="Nombre" />                                                                                          | <p>TextField(<br>    value = nombre,<br>    onValueChange = {<br>        nombre = it<br>}<br>)</p>      |
+| \<Button android:text="Aceptar"/>                                                                                            | <p>Button(<br>    onClick = { }<br>) {<br>    Text("Aceptar")<br>}</p>                                  |
+| \<ImageView android:src="@drawable/logo" />                                                                                  | <p>Image(<br>    painter = painterResource(R.drawable.logo),<br>    contentDescription = null<br>)</p>  |
+| \<LinearLayout android:orientation="vertical">                                                                               | <p>Column {</p><p>}</p>                                                                                 |
+| \<LinearLayout android:orientation="horizontal">                                                                             | <p>Row {</p><p>}</p>                                                                                    |
+| \<FrameLayout>                                                                                                               | <p>Box {</p><p>}</p>                                                                                    |
+| <p>&#x3C;RecyclerView /></p><p>[RecyclerView necesita:</p><p>RecyclerView - Adapter - ViewHolder - LayoutManager</p><p>]</p> | <p>LazyColumn {</p><p>}</p><p>[LazyColumn necesita:</p><p>LazyColumn - items() - Composable</p><p>]</p> |
+
+**Views (Vistas) y sus tipos**
+
+Las vistas son los bloques de construcción de la interfaz de usuario en Android. Son componentes que permiten controlar la interacción del usuario con la aplicación. Estos son muy similares a los controles SWING de Java, como Labels, Buttons, TextFields, Checkboxes, etc. Los Views son organizados dentro de los Layouts para que el usuario comprenda los objetivos de la actividad.
+
+Se pueden agrupar para formar interfaces de usuario más complejas. Un ViewGroup es un contenedor que determina cómo se muestran las vistas.
+
+El ViewGroup es el padre y las vistas dentro de él son sus hijos. Algunos tipos de ViewGroups son:
+
+![Tipos de ViewGroup](../.gitbook/assets/image2.png)
+
+Todos los elementos de una pantalla, deberían ir agrupados dentro de un ViewGroup.
+
+La representación jerárquica de un ViewGroup (LinearLayout) podría ser esta:
+
+![Jerarquía de un LinearLayout](../.gitbook/assets/image3.png)
+
+![Panel de vistas de Android Studio](../.gitbook/assets/image4.png)
+
+En Android Studio encontramos todas las vistas y grupos de vistas para trabajar con XML con las que podemos interactuar en una ventana como la de la imagen derecha.
+
+Hay multitud de variantes y opciones a la hora de crear vistas y adaptarlas a las necesidades de nuestra aplicación.
+
+## 4. Primera aplicación funcional
+
+Hasta ahora usando XML podríamos interactuar pulsando un botón con este código:
+
+```kotlin
+val boton = findViewById<Button>(R.id.btnSumar)
+boton.setOnClickListener {
+}
+```
+
+Este enfoque sigue presente en muchos proyectos existentes. Conviene conocerlo, pero ya no es la técnica recomendada para proyectos nuevos.
+
+Un Composable es una función capaz de generar interfaz gráfica.
+
+```kotlin
+@Composable
+fun Saludo() {
+    Text("Hola DAM")
+}
+```
+
+La anotación:
+
+@Composable indica que la función dibuja elementos visuales.
+
+## 4.1. Eventos en Compose
+
+```kotlin
+Button(
+    onClick = {
+    }
+) {
+    Text("Aceptar")
+}
+```
+
+El parámetro onClick contiene la lógica que se ejecutará al pulsar el botón.
+
+### Enlaces a Ejemplos
+
+* [00\_Contador](https://cloud.educa.madrid.org/s/Ddw6WRQNgf8KLEJ)
+* [01\_SumaDosNumeros (Version XML y Composable)](https://cloud.educa.madrid.org/s/Ddw6WRQNgf8KLEJ)
+
+## 4.2. Estado en Compose
+
+## Administrar el estado
+
+La gestión de estado en **Jetpack Compose** es un aspecto fundamental para crear interfaces reactivas y eficientes. Dado que **Jetpack Compose** está basado en la programación declarativa, el manejo del estado es crucial para actualizar la interfaz de usuario (UI) de forma adecuada. Vamos a hacer un tutorial en profundidad que cubra los conceptos clave, las herramientas proporcionadas por Compose, y algunos ejemplos prácticos.
+
+### **Declarativo vs Imperativo**
+
+Jetpack Compose sigue un paradigma de programación **declarativa**, a diferencia del paradigma **imperativo** que se encuentra en la programación tradicional de Android (por ejemplo, con XML y `findViewById`). En una UI declarativa, la interfaz se describe como una función del estado. Esto significa que cuando el estado cambia, la UI se actualiza automáticamente para reflejar esos cambios.
+
+#### **¿Qué es el estado en una UI declarativa?**
+
+El estado es cualquier dato que afecta la representación de la interfaz de usuario. En Compose, este estado se puede manejar de manera que las vistas sean reactivas, es decir, que se actualicen automáticamente cada vez que el estado cambia.
+
+```kotlin
+@Composable
+fun Contador() {
+    // contador es de tipo MutableState<Int>
+    var contador = remember { mutableStateOf(0) }
+    
+    Column {
+        Text(text = "Contador: ${contador.value}")
+        Button(onClick = { contador.value++ }) {
+            Text("Incrementar")
+        }
+    }
+}
+```
+
+En este ejemplo, cada vez que el botón se presiona, el valor de `contador` se actualiza y, debido a la naturaleza declarativa de Compose, el `Text` se recompone automáticamente.
+
+### **¿Qué es una recomposición?**
+
+Una **recomposición** es el proceso mediante el cual una función `@Composable` se vuelve a ejecutar cuando uno o más datos de estado de los que depende cambian. Esto ocurre debido al enfoque **declarativo** de Compose: la interfaz de usuario se vuelve a "recomponer" cuando detecta un cambio en el estado que influye en la representación visual.
+
+En una aplicación **imperativa** tradicional, se tendría que modificar manualmente la interfaz de usuario cuando cambia un estado. Sin embargo, en Compose, no se modifican los elementos manualmente; en su lugar, el sistema vuelve a ejecutar las funciones `@Composable` pertinentes, recreando la UI con los nuevos valores de estado.
+
+**2. ¿Cuándo ocurre una recomposición?**
+
+La recomposición ocurre cuando:
+
+* **El estado que afecta un `@Composable` cambia.** Por ejemplo, si un `Text` muestra el valor de un `mutableStateOf`, y ese valor cambia, la recomposición ocurre para que el `Text` muestre el nuevo valor.
+* **Un efecto de estado cambia.** Al usar funciones como `LaunchedEffect` o `remember`, los efectos que dependen de algún valor pueden desencadenar recomposiciones.
+
+### Funciones para la gestión del estado
+
+#### **`remember`**
+
+La función `remember` es crucial para almacenar valores a lo largo del ciclo de vida de una función composable. Si no usas `remember`, el valor se reseteará cada vez que la función se vuelva a ejecutar (es decir, en cada recomposición).
+
+```kotlin
+@Composable
+fun EjemploRemember() {
+    val nombre = remember { mutableStateOf("Compose") }
+
+    Text(text = "Hola, ${nombre.value}")
+}
+```
+
+#### **`mutableStateOf`**
+
+`mutableStateOf` se usa para crear un estado mutable en Compose. Se comporta como un observable, lo que significa que cuando su valor cambia, los composables que dependen de ese valor se recomponen.
+
+```kotlin
+val nombre = remember { mutableStateOf("Mundo") }
+nombre.value = "Compose"
+```
+
+#### **`rememberSaveable`**
+
+`rememberSaveable` es similar a `remember`, pero además guarda el estado a través de cambios de configuración, como la rotación de pantalla. Esto lo hace ideal para gestionar datos que no deseas que se pierdan en estos casos.
+
+```kotlin
+@Composable
+fun EjemploRememberSaveable() {
+    var contador by rememberSaveable { mutableStateOf(0) }
+
+    Button(onClick = { contador++ }) {
+        Text("Contador: $contador")
+    }
+}
+```
+
+#### Estados derivados
+
+`derivedStateOf` se usa para crear un nuevo estado que depende de otro, optimizando así el número de recomposiciones.
+
+```kotlin
+val scrollState = rememberScrollState()
+val isScrolledToEnd = remember {
+    derivedStateOf { scrollState.value == scrollState.maxValue }
+}
+```
+
+#### Azúcar sintático con by
+
+Es posible utilizar el mecanismo de azúcar sintáctico by para evitar tener que estar llamando al `.value` de un estado:
+
+```kotlin
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+
+@Composable
+fun Contador() {
+    // contador es de tipo MutableState<Int>
+    var contador by remember { mutableStateOf(0) }
+    
+    Column {
+        Text(text = "Contador: ${contador}")
+        Button(onClick = { contador++ }) {
+            Text("Incrementar")
+        }
+    }
+}
+```
+
+Para que el código anterior funcione, es necesario añadir los dos import `getValue` y `setValue`
+
+## 5. La clase Toast
+
+La clase Toast permite mostrar mensajes breves en pantalla.
+
+Un Toast:
+
+* No bloquea la aplicación.
+* No requiere interacción del usuario.
+* Desaparece automáticamente tras unos segundos.
+
+Se utiliza habitualmente para:
+
+* Confirmar acciones.
+* Mostrar errores sencillos.
+* Informar al usuario de que una operación se ha completado.
+
+Ejemplo:
+
+```kotlin
+Toast.makeText(this, "Operación realizada", Toast.LENGTH_SHORT ).show()
+```
+
+### Toast en Jetpack Compose
+
+Cuando trabajamos con Compose necesitamos obtener el contexto de la aplicación:
+
+```kotlin
+val context = LocalContext.current
+```
+
+Ejemplo:
+
+```kotlin
+Button(
+    onClick = { Toast.makeText(context, "Hola DAM", Toast.LENGTH_SHORT).show() }
+){
+    Text("Mostrar mensaje")
+}
+```
+
+### Ejercicio 1
+
+Solicitar un nombre y una edad mediante un TextField y mostrar: "Hola \[nombre], tienes \[edad] años por tanto eres mayor/menor de edad" usando un Toast.
+
+## 6. Splash Screen
+
+La Splash Screen es la primera pantalla que aparece al arrancar una aplicación. Normalmente incluye:
+
+* Logotipo.
+* Nombre de la aplicación.
+* Color corporativo.
+
+Su principal objetivo es mejorar la experiencia inicial del usuario.
+
+### Splash Screen moderna
+
+Las versiones actuales de Android incorporan soporte nativo. La configuración suele realizarse mediante:
+
+* themes.xml
+* AndroidManifest.xml
+
+La Activity principal continúa funcionando igual independientemente de si usamos XML o Compose.
+
+## 7. Evolución de las listas en Android
+
+Una de las formas que tiene Android para mostrar colecciones de datos es el uso de las estructuras:
+
+* ListView (XML)
+* RecyclerView (XML)
+* LazyColumn. (Compose)
+
+### 7.1 ListView y ArrayAdapter
+
+#### Estado actual
+
+LEGACY
+
+Es importante conocerlo porque aparecen en aplicaciones antiguas. Sin embargo, actualmente apenas se utiliza en proyectos nuevos.
+
+#### ¿Qué es un ArrayAdapter?
+
+Un adaptador actúa como puente entre:
+
+* Los datos.
+* El componente visual.
+
+Ejemplo:
+
+```kotlin
+val ciudades = arrayOf( "Madrid", "Toledo", "Sevilla" )
+val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, ciudades )
+```
+
+### 7.2 RecyclerView
+
+#### Estado actual
+
+USADO
+
+RecyclerView sigue apareciendo en multitud de aplicaciones profesionales.
+
+#### ¿Qué es RecyclerView?
+
+RecyclerView mejora el rendimiento reutilizando vistas. En lugar de crear continuamente nuevos elementos:
+
+* Los recicla.
+* Los reutiliza.
+* Consume menos memoria.
+
+#### Elementos principales
+
+**RecyclerView**
+
+Zona donde se muestran los datos.
+
+**Adapter**
+
+Conecta datos e interfaz.
+
+**ViewHolder**
+
+Representa una fila individual.
+
+**Dataset**
+
+Colección de información.
+
+### 7.3 LazyColumn (Jetpack Compose)
+
+Es la alternativa moderna a RecyclerView y permite mostrar colecciones de datos utilizando Compose.
+
+Ejemplo:
+
+```kotlin
+LazyColumn {
+    items(alumnos) { alumno ->
+        Text(alumno.nombre)
+    }
+}
+```
+
+#### Ventajas
+
+* Menos código.
+* No necesita Adapter.
+* No necesita ViewHolder.
+* Más fácil de mantener.
+
+#### Equivalencia conceptual
+
+RecyclerView necesita:
+
+* Adapter
+* ViewHolder
+* Item XML
+
+LazyColumn necesita:
+
+* Una lista.
+* Un composable.
+
+## 8. Vista previa de componentes con @Preview
+
+Cuando estamos creando una interfaz con Jetpack Compose, es habitual realizar pequeños cambios continuamente: modificar un texto, cambiar un color, ajustar un tamaño, añadir un componente, etc.
+
+Podríamos ejecutar la aplicación en el emulador cada vez que hacemos uno de estos cambios, pero durante el diseño de la interfaz existe una alternativa mucho más cómoda: **las vistas previas de Jetpack Compose mediante la anotación@Preview**.
+
+@Preview permite visualizar un componente @Composable directamente desde Android Studio sin necesidad de ejecutar toda la aplicación. Esto resulta especialmente útil durante el desarrollo y diseño de la interfaz.
+
+### Nuestra primera vista previa
+
+Supongamos que tenemos el siguiente componente:
+
+```kotlin
+@Composable
+fun Saludo(nombre: String) {
+    Text ( text = "Hola, $nombre" ) }
+```
+
+Para visualizarlo podemos crear otra función:
+
+```kotlin
+@Preview
+@Composable
+fun SaludoPreview() {
+    Saludo(nombre = "Mario")}
+```
+
+Aquí aparecen dos anotaciones:
+
+#### @Composable
+
+Indica que la función puede formar parte de una interfaz creada con Jetpack Compose.
+
+#### @Preview
+
+Indica a Android Studio que queremos visualizar ese Composable en la ventana de diseño.
+
+La documentación oficial recomienda precisamente crear una función @Composable anotada con @Preview que invoque al componente que queremos visualizar.
+
+Por tanto, podemos diferenciar entre **nuestro componente real (@Composable)**, y @Preview, que utilizamos **para comprobar visualmente cómo queda ese componente**.
+
+**Importante:** normalmente no añadiremos @Preview directamente a todos nuestros componentes. Crearemos funciones específicas de preview que llamen al componente que queremos visualizar.
+
+### Mostrar un fondo en la vista previa
+
+En algunos componentes puede resultar difícil distinguir sus límites si el fondo de la preview coincide con el color de nuestra interfaz.
+
+Podemos solicitar a Android Studio que muestre un fondo utilizando, por ejemplo:
+
+```kotlin
+@Preview(showBackground = true)
+@Composable
+fun SaludoPreview() {
+    Saludo(nombre = "Mario")
+}
+```
+
+Ahora Android Studio mostrará un fondo detrás del componente. Esto será especialmente útil cuando empecemos a trabajar con diferentes colores, márgenes y contenedores.
+
+### Modificar el tamaño de la vista previa
+
+También podemos establecer el ancho y el alto disponibles mediante widthDp y heightDp. La documentación oficial de Compose permite definir manualmente estas dimensiones en lugar de utilizar el tamaño calculado automáticamente.
+
+Por ejemplo:
+
+```kotlin
+@Preview( showBackground = true, widthDp = 300, heightDp = 200 )
+@Composable
+fun TarjetaPreview() {
+    Tarjeta()
+}
+```
+
+### Poner nombre a nuestras vistas previas
+
+Cuando empezamos a tener muchas previews puede resultar complicado identificarlas.
+
+Podemos utilizar el parámetro name:
+
+```kotlin
+@Preview(name = "Tarjeta pequeña", showBackground = true, widthDp = 200)
+@Composable
+fun TarjetaPequenaPreview() {
+    Tarjeta()
+}
+```
+
+El nombre nos permitirá reconocer con mayor facilidad qué situación estamos representando.
+
+Por ejemplo, podríamos tener:
+
+```kotlin
+@Preview(name = "Texto corto",showBackground = true)
+@Composable
+fun MensajeCortoPreview() {
+    Mensaje(texto = "Hola")
+}
+```
+
+y otra preview:
+
+```kotlin
+Kotlin
+@Preview(name = "Texto largo", showBackground = true)
+@Composable
+fun MensajeLargoPreview() {
+    Mensaje(
+        texto = "Este es un mensaje bastante más largo para comprobar cómo se adapta nuestro componente."
+    )
+}
+```
+
+Esto introduce una idea muy importante:
+
+**Una preview no sirve únicamente para comprobar si algo queda bonito. También podemos utilizarla para comprobar cómo responde nuestro componente ante diferentes situaciones.**
+
+### Varias vistas previas del mismo componente
+
+Un mismo componente puede tener tantas funciones de preview como necesitemos.
+
+Imaginemos:
+
+```kotlin
+@Composable
+fun Usuario(nombre: String) {
+    Text(text = nombre)
+}
+```
+
+Podemos probar diferentes datos:
+
+```kotlin
+@Preview(showBackground = true)
+@Composable
+fun UsuarioPreview() {
+    Usuario(nombre = "Ana")
+}
+@Preview(showBackground = true)
+@Composable
+fun UsuarioNombreLargoPreview() {
+    Usuario(nombre = "Alejandro)
+}
+```
+
+Incluso es posible aplicar @Preview varias veces para visualizar un mismo composable con diferentes propiedades. Android Studio ofrece modos de visualización para trabajar con varias previews simultáneamente.
+
+Esta posibilidad se vuelve especialmente interesante según aumente la complejidad de nuestras interfaces.
+
+Por ejemplo, más adelante podríamos comprobar estados como:
+
+* Producto disponible.
+* Producto agotado.
+* Carrito vacío.
+* Carrito con productos.
+* Usuario conectado.
+* Usuario sin identificar.
+* Información cargando.
+* Error al recuperar la información.
+
+No necesitaremos aprender ahora cómo implementar todos esos estados. Lo importante es entender que **las previews pueden ayudarnos a visualizar diferentes situaciones de nuestra interfaz**.
+
+### @Preview no sustituye al emulador
+
+Es importante diferenciar ambas herramientas. Una preview está pensada principalmente para facilitar el **diseño y comprobación rápida de nuestra interfaz**. El emulador o dispositivo real nos permite ejecutar la aplicación y comprobar su comportamiento completo.
+
+Por ejemplo, podemos utilizar @Preview para comprobar rápidamente:
+
+* Cómo queda un botón
+* La distribución de una tarjeta
+* El aspecto de una pantalla
+* Distintos tamaños
+* Diferentes textos
+* Distintas configuraciones visuales
+
+Mientras que necesitaremos ejecutar la aplicación cuando queramos comprobar su funcionamiento real y su integración con el resto de elementos.
+
+De hecho, una de las ventajas que Google destaca de @Preview es precisamente evitar depender constantemente del emulador mientras realizamos pequeños cambios sobre la interfaz.
+
+### Diseñar componentes pensando en las previews
+
+Existe una práctica muy recomendable que iremos aplicando durante el curso.
+
+Un componente resulta más sencillo de visualizar y reutilizar cuando **los datos que necesita se reciben mediante parámetros**.
+
+Por ejemplo, es preferible tener:
+
+```kotlin
+@Composable
+fun TarjetaUsuario(nombre: String,ciudad: String) {
+    Column {
+        Text(text = nombre)
+        Text(text = ciudad)
+    }
+}
+```
+
+Ahora podemos crear fácilmente:
+
+```kotlin
+@Preview(showBackground = true)
+@Composable
+fun TarjetaUsuarioPreview() {
+    TarjetaUsuario(
+        nombre = "Mario",
+        ciudad = "Madrid"
+    )
+}
+```
+
+Y otra situación:
+
+```kotlin
+@Preview(showBackground = true)
+@Composable
+fun TarjetaUsuarioNombreLargoPreview() {
+    TarjetaUsuario(
+        nombre = "Alejandro García Rodríguez",
+        ciudad = "Madrid"
+    )
+}
+```
+
+Este pequeño ejemplo anticipa una idea que será muy importante más adelante: **separar el estado de la representación visual de nuestros componentes**.
+
+La propia documentación de Compose recomienda estructurar las pantallas teniendo en cuenta el estado que reciben como entrada y los eventos que generan como salida para aprovechar mejor las previews. Volveremos sobre esto cuando estudiemos el **estado en Jetpack Compose**.
+
+### Buenas prácticas con @Preview
+
+Cuando trabajemos con previews intentaremos seguir estas recomendaciones:
+
+#### 1. Separar el componente de su preview
+
+Mejor:
+
+```kotlin
+@Composable
+fun BotonAceptar() {
+    Button(onClick = {}) {
+        Text("Aceptar")
+    }
+}
+@Preview
+@Composable
+fun BotonAceptarPreview() {
+    BotonAceptar()
+}
+```
+
+Así no mezclamos la función real del componente con la utilizada para visualizarlo.
+
+#### 2. Utilizar nombres descriptivos
+
+Si tenemos varias previews evitaremos nombres como:
+
+```
+Plain Text, Preview1 o Preview3
+```
+
+Es preferible utilizar:
+
+```
+ProductoDisponiblePreview, ProductoAgotadoPreview o ProductoNombreLargoPreview
+```
+
+De esta manera sabemos inmediatamente qué situación estamos comprobando.
+
+#### 3. Probar situaciones diferentes
+
+No debemos utilizar @Preview únicamente con el ejemplo perfecto.
+
+También conviene probar:
+
+* textos muy cortos
+* textos largos
+* componentes con poco espacio
+* información ausente cuando nuestro diseño lo permita
+* diferentes estados visuales.
+
+Eso nos ayudará a encontrar problemas antes. .
+
+## 9. Modificadores
+
+El **`Modifier`** en Jetpack Compose es un objeto flexible y poderoso que permite modificar el comportamiento, la disposición y el estilo de los elementos UI. Se puede usar para ajustar el tamaño, el padding, agregar clics, gestionar gestos y mucho más.
+
+### Composición de Modifier
+
+Es importante destacar que los modificadores pueden ser **encadenados** para lograr efectos combinados. Los modificadores se aplican en el orden en que se encadenan, por ejemplo:
+
+```kotlin
+Modifier
+    .fillMaxWidth()
+    .padding(16.dp)
+    .background(Color.Cyan)
+    .clickable { /* Acción cuando se haga clic */ }
+    .border(2.dp, Color.Black)
+```
+
+Este modificador haría que el componente ocupe todo el ancho disponible, tenga un padding de 16 dp, un fondo cian, sea clickeable y tenga un borde negro.
+
+El **orden de los modificadores** es crucial porque cada modificador se aplica de manera secuencial, y el resultado de un modificador puede influir en cómo se comportan los modificadores que vienen después.

@@ -10,7 +10,7 @@ El objetivo principal es mostrar cómo separar las responsabilidades de una apli
 - **View**: muestra la interfaz de usuario y recoge las acciones del usuario.
 - **ViewModel**: almacena y gestiona el estado de la aplicación actuando como intermediario entre la vista y los datos.
 
-La aplicación permite introducir el título y la descripción de una tarea mediante un formulario y gestionar el estado de los datos utilizando **StateFlow**.
+La aplicación permite introducir el título y la descripción de una tarea mediante un formulario y gestionar el estado de los datos utilizando **StateFlow**. Además se incluye el **@Preview** para tener una visualización previa de la UI(sin necesidad de ejecución)
 
 ---
 
